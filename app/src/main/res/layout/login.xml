@@ -164,7 +164,7 @@
         app:srcCompat="@drawable/facebook_logo_dark" />
 
     <TextView
-        android:id="@+id/login_register_text"
+        android:id="@+id/login_to_register_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="135dp"
