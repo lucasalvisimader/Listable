@@ -1,4 +1,13 @@
 <resources>
     <string name="app_name">Listable</string>
     <string name="logo">Logo</string>
+    <string name="apelido">Apelido</string>
+    <string name="email">Email</string>
+    <string name="senha">Senha</string>
+    <string name="confirmar_senha">Confirmar Senha</string>
+    <string name="fazer_login">Fazer login</string>
+    <string name="manter_me_logado">Manter-me logado</string>
+    <string name="ou">OU</string>
+    <string name="google_logo">google_logo</string>
+    <string name="facebook_logo">facebook_logo</string>
 </resources>

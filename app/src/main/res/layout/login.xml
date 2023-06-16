@@ -8,7 +8,7 @@
     android:background="#F3F3F3">
 
     <ImageView
-        android:id="@+id/login_logo"
+        android:id="@+id/logo"
         android:layout_width="128dp"
         android:layout_height="128dp"
         android:layout_marginTop="56dp"
@@ -30,12 +30,13 @@
         android:layout_marginRight="43dp"
         android:ems="10"
         android:fontFamily="@font/inter_semi_bold"
-        android:hint="Email"
+        android:hint="@string/email"
         android:inputType="textEmailAddress"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/login_logo" />
+        app:layout_constraintTop_toBottomOf="@+id/logo"
+        android:autofillHints="" />
 
     <EditText
         android:id="@+id/login_password"
@@ -49,12 +50,13 @@
         android:layout_marginRight="43dp"
         android:ems="10"
         android:fontFamily="@font/inter_semi_bold"
-        android:hint="Senha"
+        android:hint="@string/senha"
         android:inputType="textPassword"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/login_email" />
+        app:layout_constraintTop_toBottomOf="@+id/login_email"
+        android:autofillHints="" />
 
     <Button
         android:id="@+id/login_submit"
@@ -68,7 +70,7 @@
         android:layout_marginRight="43dp"
         android:fontFamily="@font/inter"
         android:letterSpacing="0"
-        android:text="Fazer login"
+        android:text="@string/fazer_login"
         android:textAllCaps="false"
         android:textSize="20sp"
         app:cornerRadius="10dp"
@@ -89,7 +91,7 @@
         android:fontFamily="@font/inter_semi_bold"
         android:scaleX="1.3"
         android:scaleY="1.3"
-        android:text="Manter-me logado"
+        android:text="@string/manter_me_logado"
         android:textColor="@color/black_default"
         app:layout_constraintBottom_toTopOf="@+id/login_submit"
         app:layout_constraintStart_toStartOf="parent"
@@ -106,7 +108,7 @@
         android:layout_marginEnd="14dp"
         android:layout_marginRight="14dp"
         android:background="@color/black"
-        app:layout_constraintEnd_toStartOf="@+id/textView5"
+        app:layout_constraintEnd_toStartOf="@+id/login_ou"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/login_submit" />
 
@@ -120,7 +122,7 @@
         android:layout_marginEnd="192dp"
         android:layout_marginRight="192dp"
         android:fontFamily="@font/inter_semi_bold"
-        android:text="OU"
+        android:text="@string/ou"
         android:textColor="@color/black"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -138,7 +140,7 @@
         android:layout_marginRight="63dp"
         android:background="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/textView5"
+        app:layout_constraintStart_toEndOf="@+id/login_ou"
         app:layout_constraintTop_toBottomOf="@+id/login_submit" />
 
     <ImageView
@@ -150,7 +152,8 @@
         android:layout_marginTop="44dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/login_line_before"
-        app:srcCompat="@drawable/google_logo_dark" />
+        app:srcCompat="@drawable/google_logo_dark"
+        android:contentDescription="@string/google_logo" />
 
     <ImageView
         android:id="@+id/login_facebook_logo"
@@ -161,17 +164,18 @@
         android:layout_marginRight="80dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/login_line_after"
-        app:srcCompat="@drawable/facebook_logo_dark" />
+        app:srcCompat="@drawable/facebook_logo_dark"
+        android:contentDescription="@string/facebook_logo" />
 
     <TextView
         android:id="@+id/login_to_register_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="135dp"
+        android:layout_marginBottom="84dp"
         android:fontFamily="@font/inter_semi_bold"
         android:text=""
         android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/login_ou" />
+        app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
