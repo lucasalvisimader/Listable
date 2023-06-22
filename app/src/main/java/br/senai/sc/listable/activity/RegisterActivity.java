@@ -1,4 +1,4 @@
-package br.senai.sc.listable;
+package br.senai.sc.listable.activity;
 
 import android.os.Bundle;
 import android.text.Html;
@@ -6,6 +6,8 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import br.senai.sc.listable.R;
 
 public class RegisterActivity extends AppCompatActivity {
 

@@ -1,9 +1,12 @@
-package br.senai.sc.listable;
+package br.senai.sc.listable.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+
+import br.senai.sc.listable.R;
+import br.senai.sc.listable.activity.LoginActivity;
 
 @SuppressWarnings("CustomSplashScreen")
 public class SplashActivity extends AppCompatActivity {

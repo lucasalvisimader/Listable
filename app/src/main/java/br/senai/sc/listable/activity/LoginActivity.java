@@ -1,6 +1,5 @@
-package br.senai.sc.listable;
+package br.senai.sc.listable.activity;
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.Html;
@@ -8,6 +7,8 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import br.senai.sc.listable.R;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -26,7 +27,7 @@ public class LoginActivity extends AppCompatActivity {
 
     private void onClick(TextView from, Object to) {
         from.setOnClickListener(v -> {
-            Intent i = new Intent((Context) this, (Class<?>) to);
+            Intent i = new Intent(this, (Class<?>) to);
             startActivity(i);
         });
     }
