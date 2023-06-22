@@ -110,7 +110,7 @@
         android:layout_marginRight="43dp"
         android:fontFamily="@font/inter"
         android:letterSpacing="0"
-        android:text="@string/fazer_login"
+        android:text="@string/fazer_cadastro"
         android:textAllCaps="false"
         android:textSize="20sp"
         app:cornerRadius="10dp"
