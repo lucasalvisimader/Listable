@@ -17,6 +17,6 @@
     <string name="vamos_fazer_suas_listas">Vamos fazer suas listas!</string>
     <string name="clique_em_nova_lista_para_criar_a_sua_primeira_lista">Clique em “Nova Lista” para criar a sua primeira lista</string>
     <string name="list_default">list_default</string>
-<!-- TODO: Remove or change this placeholder text -->
+    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

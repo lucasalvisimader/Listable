@@ -24,6 +24,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
+            <androidx.fragment.app.FragmentContainerView
+                android:id="@+id/header_fragment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:name="br.senai.sc.listable.fragment.HeaderFragment"
+                tools:layout="@layout/header_fragment" />
+
             <TextView
                 android:id="@+id/title_default"
                 android:layout_width="wrap_content"
@@ -62,6 +69,7 @@
             <Button
                 android:id="@+id/add_list"
                 style="@style/main_add"
+                android:fontFamily="@font/inter"
                 android:layout_width="wrap_content"
                 android:layout_height="55dp"
                 android:layout_below="@+id/list_default"
