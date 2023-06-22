@@ -11,5 +11,6 @@
     <string name="ou">OU</string>
     <string name="google_logo">google_logo</string>
     <string name="facebook_logo">facebook_logo</string>
-    <string name="esqueci_minha_senha">Esqueci minha senha</string>
+    <string name="esqueci_minha_senha"><u>Esqueci minha senha</u></string>
+    <string name="splash_icon">splash_icon</string>
 </resources>
