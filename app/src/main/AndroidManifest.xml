@@ -26,9 +26,19 @@
         </activity>
         <activity
             android:name=".LoginActivity"
+            android:theme="@style/Theme.Listable"
             android:screenOrientation="portrait"
-            android:exported="true"
-            android:windowSoftInputMode="adjustResize">
+            android:exported="true">
+
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".RegisterActivity"
+            android:theme="@style/Theme.Listable"
+            android:screenOrientation="portrait"
+            android:exported="true">
 
             <meta-data
                 android:name="android.app.lib_name"
