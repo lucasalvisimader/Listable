@@ -34,7 +34,6 @@
         android:ems="10"
         android:fontFamily="@font/inter_semi_bold"
         android:hint="@string/email"
-        android:textSize="24sp"
         android:inputType="textEmailAddress"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
