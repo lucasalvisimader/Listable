@@ -15,7 +15,8 @@
         android:background="@drawable/add_list_shape">
 
         <EditText
-            android:id="@+id/editTextTextPersonName"
+            android:id="@+id/add_list_input"
+            style="@style/add_list_fragment_input"
             android:layout_width="293dp"
             android:layout_height="57dp"
             android:layout_marginStart="34dp"
@@ -29,14 +30,16 @@
             android:fontFamily="@font/inter"
             android:background="@drawable/rounded_corners"
             android:hint="@string/nova_lista"
-            android:inputType="textPersonName"
             android:textSize="24sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            android:inputType="text"
+            android:paddingStart="20dp"
+            android:paddingLeft="20dp" />
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/add_list_cancel_button"
             android:layout_width="130sp"
             android:layout_height="wrap_content"
             android:layout_marginStart="32dp"
@@ -49,11 +52,11 @@
             app:backgroundTint="@color/white"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName"
+            app:layout_constraintTop_toBottomOf="@+id/add_list_input"
             app:layout_constraintVertical_bias="0.666" />
 
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/add_list_create_button"
             android:layout_width="130sp"
             android:layout_height="wrap_content"
             android:layout_marginTop="66dp"
@@ -67,7 +70,7 @@
             app:backgroundTint="@color/green_secondary"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName"
+            app:layout_constraintTop_toBottomOf="@+id/add_list_input"
             app:layout_constraintVertical_bias="0.75" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>
