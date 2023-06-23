@@ -13,4 +13,5 @@
     <color name="add_list_bg">#66000000</color>
     <color name="green_default">#6BA53A</color>
     <color name="green_secondary">#518327</color>
+    <color name="grey_text_on_white">#575757</color>
 </resources>

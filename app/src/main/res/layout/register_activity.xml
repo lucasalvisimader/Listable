@@ -90,7 +90,7 @@
         android:layout_marginRight="43dp"
         android:autofillHints=""
         android:ems="10"
-        android:fontFamily="@font/inter_semi_bold"
+        android:fontFamily="@font/inter"
         android:hint="@string/confirmar_senha"
         android:inputType="textPassword"
         app:layout_constraintEnd_toEndOf="parent"
