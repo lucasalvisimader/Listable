@@ -17,11 +17,19 @@
     <string name="vamos_fazer_suas_listas">Vamos fazer suas listas!</string>
     <string name="clique_em_nova_lista_para_criar_a_sua_primeira_lista">Clique em “Nova Lista” para criar a sua primeira lista</string>
     <string name="list_default">list_default</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="minhas_listas">Minhas Listas</string>
     <string name="criar">Criar</string>
     <string name="cancelar">Cancelar</string>
     <string name="nova_lista">Nova lista</string>
+
     <string name="profile_photo">profile_photo</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Lucas Mader</string>
+    <string name="nav_header_subtitle">lucasMader@gmail.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+    <string name="menu_home">Home</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
 </resources>
