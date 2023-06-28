@@ -9,9 +9,7 @@ import android.text.SpannableString;
 import android.text.style.AbsoluteSizeSpan;
 import android.view.Gravity;
 import android.widget.Button;
-
 import androidx.appcompat.app.AppCompatActivity;
-
 import br.senai.sc.listable.R;
 
 public class MainActivity extends AppCompatActivity {
