@@ -10,7 +10,7 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.example.myapplication.databinding.FragmentHomeBinding;
+import br.senai.sc.listable.databinding.FragmentHomeBinding;
 
 public class HomeFragment extends Fragment {
 
