@@ -19,4 +19,7 @@
         <item name="backgroundTint">@color/white</item>
         <item name="android:textColor">@color/black_default</item>
     </style>
+    <style name="navigation_drawer_item_text">
+        <item name="android:textSize">18sp</item>
+    </style>
 </resources>
