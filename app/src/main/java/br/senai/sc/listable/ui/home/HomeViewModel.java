@@ -1,15 +1,16 @@
-package br.senai.sc.listable.ui.terms;
+package br.senai.sc.listable.ui.home;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class TermsViewModel extends ViewModel {
+public class HomeViewModel extends ViewModel {
+
     private final MutableLiveData<String> mText;
 
-    public TermsViewModel() {
+    public HomeViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is terms fragment");
+        mText.setValue("This is home fragment");
     }
 
     public LiveData<String> getText() {
