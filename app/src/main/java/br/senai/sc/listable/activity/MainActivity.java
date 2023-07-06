@@ -3,17 +3,13 @@ package br.senai.sc.listable.activity;
 import android.app.Dialog;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
-import android.os.Build;
 import android.os.Bundle;
-import android.text.Layout;
 import android.text.Spannable;
 import android.text.SpannableString;
 import android.text.style.AbsoluteSizeSpan;
-import android.text.style.AlignmentSpan;
 import android.view.Gravity;
 import android.view.Menu;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -78,16 +74,9 @@ public class MainActivity extends AppCompatActivity {
             if (view instanceof TextView) {
                 TextView textView = (TextView) view;
                 textView.setTextAppearance(this, R.style.Theme_Toolbar_Title);
-
-                SpannableString spannableString = new SpannableString(textView.getText());
-                spannableString.setSpan(new AlignmentSpan.Standard(Layout.Alignment.ALIGN_CENTER), 0, spannableString.length(), Spannable.SPAN_INCLUSIVE_INCLUSIVE);
-
-                textView.setText(spannableString);
-                textView.setGravity(Gravity.CENTER);
                 break;
             }
         }
-
 
         binding.appBarMain.fab.setOnClickListener(view -> Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                 .setAction("Action", null).show());
