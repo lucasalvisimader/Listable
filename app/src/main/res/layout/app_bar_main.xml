@@ -17,8 +17,7 @@
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="@drawable/header_fragment_bg"
-            app:contentInsetStart="160dp"
-            android:theme="@style/Theme.Header.Menu" />
+            android:theme="@style/Theme.Header.Menu"/>
     </com.google.android.material.appbar.AppBarLayout>
 
     <include layout="@layout/content_main" />

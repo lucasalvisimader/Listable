@@ -3,15 +3,22 @@ package br.senai.sc.listable.activity;
 import android.app.Dialog;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
+import android.os.Build;
 import android.os.Bundle;
+import android.text.Layout;
 import android.text.Spannable;
 import android.text.SpannableString;
 import android.text.style.AbsoluteSizeSpan;
+import android.text.style.AlignmentSpan;
 import android.view.Gravity;
 import android.view.Menu;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
+
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
@@ -64,12 +71,24 @@ public class MainActivity extends AppCompatActivity {
 
         setSupportActionBar(binding.appBarMain.toolbar);
 
-        getSupportActionBar().setTitleAppearance(this, R.style.Theme_Toolbar_Title);
+        Toolbar toolbar = binding.appBarMain.toolbar;
 
-        TextView toolbarTitle = binding.appBarMain.toolbar.findViewById(R.id.toolbar_title);
+        for (int i = 0; i < toolbar.getChildCount(); i++) {
+            View view = toolbar.getChildAt(i);
+            if (view instanceof TextView) {
+                TextView textView = (TextView) view;
+                textView.setTextAppearance(this, R.style.Theme_Toolbar_Title);
 
-        // Aplica o estilo personalizado ao TextView do título
-        toolbarTitle.setTextAppearance(this, R.style.AppToolbarTitleText);
+                SpannableString spannableString = new SpannableString(textView.getText());
+                spannableString.setSpan(new AlignmentSpan.Standard(Layout.Alignment.ALIGN_CENTER), 0, spannableString.length(), Spannable.SPAN_INCLUSIVE_INCLUSIVE);
+
+                textView.setText(spannableString);
+                textView.setGravity(Gravity.CENTER);
+                break;
+            }
+        }
+
+
         binding.appBarMain.fab.setOnClickListener(view -> Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                 .setAction("Action", null).show());
 
