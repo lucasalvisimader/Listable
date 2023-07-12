@@ -22,4 +22,7 @@
     <style name="navigation_drawer_item_text">
         <item name="android:textSize">18sp</item>
     </style>
+    <style name="menu_title_style" parent="@style/TextAppearance.AppCompat.Widget.ActionBar.Title">
+        <item name="android:layout_gravity">center</item>
+    </style>
 </resources>
