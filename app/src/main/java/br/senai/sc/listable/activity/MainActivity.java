@@ -89,17 +89,6 @@ public class MainActivity extends AppCompatActivity {
         //        .setAction("Action", null).show());
         //setContentView(R.layout.main_activity);
 
-        Button addList = findViewById(R.id.add_list);
-
-        String buttonText = "+ Nova lista";
-        SpannableString spannableString = new SpannableString(buttonText);
-        spannableString.setSpan(new AbsoluteSizeSpan(24, true), 0, 1, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
-        spannableString.setSpan(new AbsoluteSizeSpan(18, true), 2, buttonText.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
-
-        addList.setText(spannableString);
-        addList.setGravity(Gravity.CENTER);
-        addList.setOnClickListener(v -> showModal());
-
         DrawerLayout drawer = binding.drawerLayout;
         NavigationView navigationView = binding.navView;
 
@@ -117,12 +106,5 @@ public class MainActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
         return NavigationUI.navigateUp(navController, mAppBarConfiguration)
                 || super.onSupportNavigateUp();
-    }
-
-    private void showModal() {
-        Dialog dialog = new Dialog(this);
-        dialog.setContentView(R.layout.add_list_fragment);
-        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-        dialog.show();
     }
 }
