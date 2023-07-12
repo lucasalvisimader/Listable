@@ -10,18 +10,18 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
-import br.senai.sc.listable.databinding.FragmentGalleryBinding;
+import br.senai.sc.listable.databinding.FragmentTrashBinding;
 
-public class GalleryFragment extends Fragment {
+public class TrashFragment extends Fragment {
 
-    private FragmentGalleryBinding binding;
+    private FragmentTrashBinding binding;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        GalleryViewModel galleryViewModel =
-                new ViewModelProvider(this).get(GalleryViewModel.class);
+        TrashViewModel galleryViewModel =
+                new ViewModelProvider(this).get(TrashViewModel.class);
 
-        binding = FragmentGalleryBinding.inflate(inflater, container, false);
+        binding = FragmentTrashBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
         final TextView textView = binding.textGallery;

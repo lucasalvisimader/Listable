@@ -10,22 +10,22 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
-import br.senai.sc.listable.databinding.FragmentSlideshowBinding;
+import br.senai.sc.listable.databinding.FragmentHistoryBinding;
 
-public class SlideshowFragment extends Fragment {
+public class HistoryFragment extends Fragment {
 
-    private FragmentSlideshowBinding binding;
+    private FragmentHistoryBinding binding;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        SlideshowViewModel slideshowViewModel =
-                new ViewModelProvider(this).get(SlideshowViewModel.class);
+        HistoryViewModel historyViewModel =
+                new ViewModelProvider(this).get(HistoryViewModel.class);
 
-        binding = FragmentSlideshowBinding.inflate(inflater, container, false);
+        binding = FragmentHistoryBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
         final TextView textView = binding.textSlideshow;
-        slideshowViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
+        historyViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
         return root;
     }
 

@@ -13,13 +13,13 @@
 
     <fragment
         android:id="@+id/nav_gallery"
-        android:name="br.senai.sc.listable.ui.gallery.GalleryFragment"
+        android:name="br.senai.sc.listable.ui.gallery.TrashFragment"
         android:label="@string/menu_trash"
-        tools:layout="@layout/fragment_gallery" />
+        tools:layout="@layout/fragment_trash" />
 
     <fragment
         android:id="@+id/nav_slideshow"
-        android:name="br.senai.sc.listable.ui.slideshow.SlideshowFragment"
+        android:name="br.senai.sc.listable.ui.slideshow.HistoryFragment"
         android:label="@string/menu_history"
-        tools:layout="@layout/fragment_slideshow" />
+        tools:layout="@layout/fragment_history" />
 </navigation>
