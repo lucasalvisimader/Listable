@@ -1,20 +1,7 @@
 package br.senai.sc.listable.activity;
 
-import android.app.Dialog;
-import android.graphics.Color;
-import android.graphics.Typeface;
-import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
-import android.text.Layout;
-import android.text.Spannable;
-import android.text.SpannableString;
-import android.text.style.AbsoluteSizeSpan;
-import android.text.style.AlignmentSpan;
-import android.text.style.StyleSpan;
-import android.view.Gravity;
-import android.view.Menu;
 import android.view.View;
-import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -26,12 +13,8 @@ import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
 import com.google.android.material.navigation.NavigationView;
-import com.google.android.material.snackbar.Snackbar;
-
-import java.util.Objects;
 
 import br.senai.sc.listable.R;
-
 import br.senai.sc.listable.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity {

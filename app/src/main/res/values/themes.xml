@@ -13,17 +13,22 @@
         <item name="android:statusBarColor" tools:targetApi="21">@color/black_default</item>
         <!-- Customize your theme here. -->
     </style>
+
     <style name="Theme.Splash" parent="Theme.MaterialComponents.NoActionBar">
-        <item name="background">@color/splash_bg</item>
+        <item name="background">@color/black_secondary</item>
         <item name="android:windowIsTranslucent">true</item>
     </style>
+
     <style name="Theme.Header.Menu" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
         <item name="android:textColorPrimary">@color/black_default</item>
     </style>
+
     <style name="Theme.Toolbar.Title" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
         <item name="android:textSize">30sp</item>
         <item name="fontFamily">@font/inter</item>
     </style>
+
     <style name="Theme.MyApplication.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
     <style name="Theme.MyApplication.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 </resources>
