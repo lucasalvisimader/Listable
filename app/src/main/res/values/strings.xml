@@ -31,4 +31,7 @@
     <string name="menu_list">Minhas Listas</string>
     <string name="menu_trash">Lixeira</string>
     <string name="menu_history">Histórico</string>
+    <string name="configuracao">Configuração</string>
+    <string name="ajuda">Ajuda</string>
+    <string name="politica_de_privacidade_termos_de_uso">POLÍTICA DE PRIVACIDADE - TERMOS DE USO</string>
 </resources>
