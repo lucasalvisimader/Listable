@@ -35,10 +35,13 @@
     <string name="ajuda">Ajuda</string>
     <string name="politica_de_privacidade_termos_de_uso">POLÍTICA DE PRIVACIDADE - TERMOS DE USO</string>
     <string name="termos_privacidade">Termos/Privacidade</string>
-    <string name="termos_privacidade_escritos">
+    <string name="termos_titulo">
         <![CDATA[
-            <b>Política de Privacidade do Aplicativo Listable</b><br/><br/>
+            <b>Termos de uso</b><br/><br/>
         ]]>
+    </string>
+    <string name="termos_privacidade_escritos">
+
     </string>
 
 </resources>
