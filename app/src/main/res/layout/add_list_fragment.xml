@@ -41,7 +41,9 @@
                 app:layout_constraintTop_toTopOf="parent"
                 android:inputType="text"
                 android:paddingStart="20dp"
-                android:paddingLeft="20dp" />
+                android:paddingEnd="0dp"
+                android:paddingLeft="20dp"
+                android:paddingRight="0dp" />
 
             <Button
                 android:id="@+id/add_list_cancel_button"

@@ -24,11 +24,11 @@
         android:checkableBehavior="single">
         <item
             android:id="@+id/nav_config"
-            android:icon="@drawable/menu_list"
+            android:icon="@drawable/menu_config"
             android:title="@string/configuracao" />
         <item
             android:id="@+id/nav_help"
-            android:icon="@drawable/menu_list"
+            android:icon="@drawable/menu_help"
             android:title="@string/ajuda" />
         <item
             android:id="@+id/nav_terms"

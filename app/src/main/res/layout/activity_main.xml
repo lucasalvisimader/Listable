@@ -29,9 +29,4 @@
         app:itemVerticalPadding="30dp"
         app:menu="@menu/activity_main_drawer" />
 
-    <!--    <View-->
-    <!--        android:layout_width="match_parent"-->
-    <!--        android:layout_height="3dp"-->
-    <!--        android:background="@drawable/nav_line" />-->
-
 </androidx.drawerlayout.widget.DrawerLayout>

@@ -22,4 +22,22 @@
         android:name="br.senai.sc.listable.ui.slideshow.HistoryFragment"
         android:label="@string/menu_history"
         tools:layout="@layout/fragment_history" />
+
+    <fragment
+        android:id="@+id/nav_config"
+        android:name="br.senai.sc.listable.ui.config.ConfigFragment"
+        android:label="@string/configuracao"
+        tools:layout="@layout/fragment_config" />
+
+    <fragment
+        android:id="@+id/nav_help"
+        android:name="br.senai.sc.listable.ui.help.HelpFragment"
+        android:label="@string/ajuda"
+        tools:layout="@layout/fragment_help" />
+
+    <fragment
+        android:id="@+id/nav_terms"
+        android:name="br.senai.sc.listable.ui.terms.TermsFragment"
+        android:label="@string/termos_privacidade"
+        tools:layout="@layout/fragment_terms" />
 </navigation>

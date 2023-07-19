@@ -24,7 +24,7 @@
     </style>
 
     <style name="Theme.Toolbar.Title" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
-        <item name="android:textSize">30sp</item>
+        <item name="android:textSize">20sp</item>
         <item name="fontFamily">@font/inter</item>
     </style>
 

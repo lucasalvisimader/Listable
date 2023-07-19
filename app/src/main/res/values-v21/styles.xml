@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
     <style name="login_input">
         <item name="android:background">@drawable/rounded_corners</item>
         <item name="android:textColor">@color/black_default</item>
@@ -7,21 +8,26 @@
         <item name="android:backgroundTint">@color/grey_bg</item>
         <item name="android:paddingLeft">20dp</item>
     </style>
+
     <style name="login_submit">
         <item name="android:textColor">@color/grey_bg</item>
         <item name="android:backgroundTint">@color/grey_text</item>
     </style>
+
     <style name="main_add">
         <item name="android:textColor">@color/black_default</item>
         <item name="backgroundTint">@color/yellow_secondary</item>
     </style>
+
     <style name="add_list_fragment_input">
         <item name="backgroundTint">@color/white</item>
         <item name="android:textColor">@color/black_default</item>
     </style>
+
     <style name="navigation_drawer_item_text">
         <item name="android:textSize">18sp</item>
     </style>
+
     <style name="menu_title_style" parent="@style/TextAppearance.AppCompat.Widget.ActionBar.Title">
         <item name="android:layout_gravity">center</item>
     </style>
