@@ -61,17 +61,15 @@ public class TermsFragment extends Fragment {
                 0, privacidade_titulo.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
 
         String email = "listable.suporte@gmail.com";
-        SpannableString emailLink = new SpannableString(email);
-        emailLink.setSpan(new android.text.style.URLSpan("mailto:" + email),
-                0, emailLink.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
-
         String privacidade_escrita_string = getString(R.string.privacidade_escrita);
-        CharSequence privacidade_escrita_string_formatado = Html.fromHtml(privacidade_escrita_string + email / emailLink,
-                Html.FROM_HTML_MODE_LEGACY);
+        CharSequence privacidade_escrita_string_formatado = Html.fromHtml(privacidade_escrita_string, Html.FROM_HTML_MODE_LEGACY);
         SpannableString privacidade_escrita = new SpannableString(privacidade_escrita_string_formatado);
         privacidade_escrita.setSpan(new AbsoluteSizeSpan(20, true),
                 0, privacidade_escrita.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
-
+        privacidade_escrita.setSpan(new android.text.style.URLSpan("mailto:" + email),
+                (privacidade_escrita.length() - 30), (privacidade_escrita.length() - 4), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+        privacidade_escrita.setSpan(new ForegroundColorSpan(getResources().getColor(R.color.yellow_default)),
+                (privacidade_escrita.length() - 30), (privacidade_escrita.length() - 4), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
 
         SpannableString todos_termos_privacidade = new SpannableString(
                 TextUtils.concat(termos_titulo, termos_escritos, privacidade_titulo, privacidade_escrita));

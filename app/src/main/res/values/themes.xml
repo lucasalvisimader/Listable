@@ -28,6 +28,12 @@
         <item name="fontFamily">@font/inter</item>
     </style>
 
+    <style name="Theme.Toolbar.Terms" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
+        <item name="android:textSize">10sp</item>
+        <item name="fontFamily">@font/inter</item>
+        <item name="android:textColorPrimary">@color/black_default</item>
+    </style>
+
     <style name="Theme.MyApplication.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="Theme.MyApplication.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
