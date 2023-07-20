@@ -66,7 +66,7 @@ public class TermsFragment extends Fragment {
                 0, emailLink.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
 
         String privacidade_escrita_string = getString(R.string.privacidade_escrita);
-        CharSequence privacidade_escrita_string_formatado = Html.fromHtml(privacidade_escrita_string + email,
+        CharSequence privacidade_escrita_string_formatado = Html.fromHtml(privacidade_escrita_string + email / emailLink,
                 Html.FROM_HTML_MODE_LEGACY);
         SpannableString privacidade_escrita = new SpannableString(privacidade_escrita_string_formatado);
         privacidade_escrita.setSpan(new AbsoluteSizeSpan(20, true),
