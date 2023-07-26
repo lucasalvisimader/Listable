@@ -21,13 +21,12 @@ import br.senai.sc.listable.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity {
     private AppBarConfiguration mAppBarConfiguration;
-    private ActivityMainBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        binding = ActivityMainBinding.inflate(getLayoutInflater());
+        br.senai.sc.listable.databinding.ActivityMainBinding binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
         setSupportActionBar(binding.appBarMain.toolbar);
@@ -45,28 +44,10 @@ public class MainActivity extends AppCompatActivity {
 
         DrawerLayout drawer = binding.drawerLayout;
         NavigationView navigationView = binding.navView;
-
-        navigationView.setNavigationItemSelectedListener(item -> {
-            if (item.getItemId() == R.id.nav_terms) {
-                TextView textView = (TextView) item.getActionView();
-                // Estilo personalizado para o item de política de privacidade e termos de uso
-                textView.setTextAppearance(this, R.style.Theme_Toolbar_Terms);
-            } /*else {
-                // Se não for o último item, aplica o estilo padrão
-                TextView textView = (TextView) item.getActionView();
-                // Estilo padrão para os demais itens
-                textView.setTextAppearance(this, R.style.NavigationDrawerText);
-            }*/
-
-            // Implementar aqui o código para tratar os cliques nos itens do Navigation Drawer
-
-            return true;
-        });
-
-        navigationView.setItemTextAppearance(R.style.Theme_Toolbar_Terms);
+        navigationView.setItemTextAppearance(R.style.Theme_Toolbar_Text);
 
         mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow)
+                R.id.nav_home, R.id.nav_history, R.id.nav_trash)
                 .setOpenableLayout(drawer)
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);

@@ -1,4 +1,4 @@
-package br.senai.sc.listable.ui.gallery;
+package br.senai.sc.listable.ui.trash;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -24,7 +24,7 @@ public class TrashFragment extends Fragment {
         binding = FragmentTrashBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        final TextView textView = binding.textGallery;
+        final TextView textView = binding.textTrash;
         galleryViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
         return root;
     }

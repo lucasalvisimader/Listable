@@ -12,14 +12,14 @@
         tools:layout="@layout/fragment_home" />
 
     <fragment
-        android:id="@+id/nav_gallery"
-        android:name="br.senai.sc.listable.ui.gallery.TrashFragment"
+        android:id="@+id/nav_trash"
+        android:name="br.senai.sc.listable.ui.trash.TrashFragment"
         android:label="@string/menu_trash"
         tools:layout="@layout/fragment_trash" />
 
     <fragment
-        android:id="@+id/nav_slideshow"
-        android:name="br.senai.sc.listable.ui.slideshow.HistoryFragment"
+        android:id="@+id/nav_history"
+        android:name="br.senai.sc.listable.ui.history.HistoryFragment"
         android:label="@string/menu_history"
         tools:layout="@layout/fragment_history" />
 

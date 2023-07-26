@@ -1,4 +1,4 @@
-package br.senai.sc.listable.ui.slideshow;
+package br.senai.sc.listable.ui.history;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -24,7 +24,7 @@ public class HistoryFragment extends Fragment {
         binding = FragmentHistoryBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        final TextView textView = binding.textSlideshow;
+        final TextView textView = binding.textHistory;
         historyViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
         return root;
     }
