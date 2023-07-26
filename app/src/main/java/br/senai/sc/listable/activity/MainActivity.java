@@ -13,8 +13,6 @@ import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
 import com.google.android.material.navigation.NavigationView;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
 
 import br.senai.sc.listable.R;
 import br.senai.sc.listable.databinding.ActivityMainBinding;
@@ -53,9 +51,6 @@ public class MainActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
-        
-        DatabaseReference reference = FirebaseDatabase.getInstance().getReference();
-        reference.child("listas").setValue("rob");
     }
 
     @Override
