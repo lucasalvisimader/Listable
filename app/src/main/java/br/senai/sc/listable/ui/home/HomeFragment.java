@@ -1,5 +1,8 @@
 package br.senai.sc.listable.ui.home;
 
+import android.app.Dialog;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.text.Spannable;
 import android.text.SpannableString;
@@ -9,13 +12,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import br.senai.sc.listable.R;
 import br.senai.sc.listable.databinding.FragmentHomeBinding;
-import br.senai.sc.listable.fragment.AddListFragment;
+import br.senai.sc.listable.utils.SaveListFirebase;
 
 public class HomeFragment extends Fragment {
 
@@ -34,23 +38,33 @@ public class HomeFragment extends Fragment {
 
         addList.setText(spannableString);
         addList.setGravity(Gravity.CENTER);
-//        addList.setOnClickListener(v -> showModal(container));
         addList.setOnClickListener(v -> {
-            // Substituir o HomeFragment pelo AddListFragment
-            getParentFragmentManager().beginTransaction()
-                    .replace(R.id.nav_host_fragment_content_main, new AddListFragment())
-                    .addToBackStack(null)
-                    .commit();
+            showModal(container);
         });
         return binding.getRoot();
     }
 
-//    private void showModal(ViewGroup container) {
-//        Dialog dialog = new Dialog(container.getContext());
-//        dialog.setContentView(R.layout.add_list_fragment);
-//        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-//        dialog.show();
-//    }
+
+    private void showModal(ViewGroup container) {
+        Dialog dialog = new Dialog(container.getContext());
+        dialog.setContentView(R.layout.add_list_fragment);
+        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+
+        Button confirmButton = dialog.findViewById(R.id.add_list_create_button);
+        Button cancelButton = dialog.findViewById(R.id.add_list_cancel_button);
+        EditText input = dialog.findViewById(R.id.add_list_input);
+
+        confirmButton.setOnClickListener(view -> {
+            SaveListFirebase.save(input.getText().toString());
+            dialog.dismiss();
+        });
+
+        cancelButton.setOnClickListener(view -> {
+            dialog.dismiss();
+        });
+
+        dialog.show();
+    }
 
     @Override
     public void onDestroyView() {
