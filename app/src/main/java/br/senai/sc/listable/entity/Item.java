@@ -1,5 +1,7 @@
 package br.senai.sc.listable.entity;
 
+import br.senai.sc.listable.utils.GeneratorUUID;
+
 public class Item {
     private String id;
     private String name;
@@ -10,8 +12,8 @@ public class Item {
     private String description;
     private boolean finished;
 
-    public Item(String id, String name) {
-        this.id = id;
+    public Item(String name) {
+        this.id = GeneratorUUID.generate();
         this.name = name;
         this.category = "default";
         this.finished = true;
