@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "273108843254",
+    "project_id": "listable-data",
+    "storage_bucket": "listable-data.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:273108843254:android:43cada4aad9aaa9e020ad7",
+        "android_client_info": {
+          "package_name": "br.senai.sc.listable"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "273108843254-dsu2k2o01gu6ist72uumcq69k4jkun4e.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBdzsgPOA5WEQeb-c5_STLZxR50mAxxF7k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "273108843254-dsu2k2o01gu6ist72uumcq69k4jkun4e.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -21,7 +21,6 @@
     <string name="criar">Criar</string>
     <string name="cancelar">Cancelar</string>
     <string name="nova_lista">Nova lista</string>
-
     <string name="profile_photo">profile_photo</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
@@ -29,7 +28,136 @@
     <string name="nav_header_subtitle">lucasMader@gmail.com</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
-    <string name="menu_home">Home</string>
-    <string name="menu_gallery">Gallery</string>
-    <string name="menu_slideshow">Slideshow</string>
+    <string name="menu_list">Minhas Listas</string>
+    <string name="menu_trash">Lixeira</string>
+    <string name="menu_history">Histórico</string>
+    <string name="configuracao">Configuração</string>
+    <string name="ajuda">Ajuda</string>
+    <string name="politica_de_privacidade_termos_de_uso">POLÍTICA DE PRIVACIDADE - TERMOS DE USO</string>
+    <string name="termos_privacidade">Termos/Privacidade</string>
+    <string name="termos_titulo">
+        <![CDATA[
+            <b>Termos de uso</b>
+            <br/><br/>
+        ]]>
+    </string>
+    <string name="termos_escritos">
+        <![CDATA[
+            Ao utilizar o aplicativo móvel Listable, você concorda em cumprir estes Termos de Uso.
+            Por favor, leia atentamente todas as cláusulas abaixo antes de usar o Listable.
+            <br/><br/>
+
+            <b>1. Uso do Aplicativo</b>
+            <br/>
+            \t\t\t\t1.1 Você pode utilizar o Listable para criar e gerenciar listas de compras pessoais.
+            <br/>
+            \t\t\t\t1.2 Lembre-se de que você é responsável por todas as atividades realizadas
+            por meio da sua conta no Listable.
+            <br/><br/>
+
+            <b>2. Privacidade</b>
+            <br/>
+            \t\t\t\t2.1 Respeitamos a sua privacidade. Por favor, leia a nossa Política de Privacidade para entender como coletamos,
+            usamos e protegemos as suas informações pessoais.
+            <br/>
+            \t\t\t\t2.2 Ao usar o Listable, você concorda com a coleta e o uso das suas informações pessoais
+            de acordo com a nossa Política de Privacidade.
+            <br/><br/>
+
+            <b>3. Propriedade Intelectual</b>
+            <br/>
+            \t\t\t\t3.1 O Listable e todo o seu conteúdo são de propriedade exclusiva da nossa empresa.
+            <br/>
+            \t\t\t\t3.2 Todos os direitos não expressamente concedidos neste documento são reservados.
+            <br/><br/>
+
+            <b>4. Limitação de Responsabilidade</b>
+            <br/>
+            \t\t\t\t4.1 O Listable é fornecido \"como está\", e não oferecemos garantias quanto à sua funcionalidade
+            ou adequação a qualquer propósito específico.
+            <br/>
+            \t\t\t\t4.2 Não seremos responsáveis por quaisquer danos diretos, indiretos, incidentais,
+            consequenciais ou punitivos decorrentes do uso ou impossibilidade de uso do Listable.
+            <br/><br/>
+
+            <b>5. Alterações nos Termos de Uso</b>
+            <br/>
+            \t\t\t\t5.1 Podemos modificar estes Termos de Uso a qualquer momento.
+            <br/>
+            \t\t\t\t5.2 Notificaremos você sobre quaisquer alterações significativas por meio do aplicativo ou por outros meios razoáveis.
+            <br/>
+            \t\t\t\t5.3 O uso contínuo do Listable após tais alterações constitui a sua concordância com os novos termos.
+            <br/><br/>
+
+            <b>6. Lei Aplicável e Jurisdição</b>
+            <br/>
+            \t\t\t\t6.1 Estes Termos de Uso serão regidos e interpretados de acordo com as leis brasileiras.
+            <br/>
+            \t\t\t\t6.2 Quaisquer disputas relacionadas a estes Termos de Uso serão submetidas à jurisdição exclusiva dos tribunais brasileiros.
+            <br/><br/><br/>
+        ]]>
+    </string>
+    <string name="privacidade_titulo">
+        <![CDATA[
+            <b>Política de Privacidade</b>
+            <br/><br/>
+        ]]>
+    </string>
+    <string name="privacidade_escrita">
+        <![CDATA[
+        Esta Política de Privacidade descreve como coletamos, usamos e protegemos as informações pessoais dos usuários
+        do aplicativo móvel Listable, em conformidade com a Lei Geral de Proteção de Dados Pessoais (LGPD).
+        <br/><br/>
+
+        <b>1. Informações Coletadas</b>
+        <br/>
+        \t\t\t\t1.1 Coletamos as informações que você fornece ao criar uma conta no Listable, incluindo o seu apelido,
+        endereço de e-mail e senha.
+        <br/>
+        \t\t\t\t1.2 Também podemos coletar informações sobre as listas de compras que você cria e
+        os produtos que você adiciona a essas listas.
+        <br/><br/>
+
+        <b>2. Uso das Informações</b>
+        <br/>
+        \t\t\t\t1.1 Utilizamos as informações coletadas para fornecer, melhorar e personalizar o Listable.
+        <br/>
+        \t\t\t\t1.2 Podemos utilizar as informações para enviar atualizações sobre o Listable,
+        comunicar-nos com você e fornecer suporte ao cliente.
+        <br/>
+        \t\t\t\t1.3 Não compartilharemos as suas informações pessoais com terceiros, exceto quando necessário para
+        fornecer os serviços relacionados ao Listable ou quando exigido por lei.
+        <br/><br/>
+
+        <b>3. Segurança das Informações</b>
+        <br/>
+        \t\t\t\t3.1 Empregamos medidas de segurança adequadas para proteger as informações pessoais dos usuários do
+        Listable contra acesso não autorizado, alteração ou destruição destas.
+        <br/><br/>
+
+        <b>4. Cookies</b>
+        <br/>
+        \t\t\t\t4.1 O Listable pode usar cookies e tecnologias similares para melhorar a experiência do usuário e
+        coletar informações adicionais.
+        <br/>
+        \t\t\t\t4.2 Você pode optar por desativar os cookies nas configurações do seu dispositivo,
+        mas isso pode afetar a funcionalidade do Listable.
+        <br/><br/>
+
+        <b>5. Alterações na Política de Privacidade</b>
+        <br/>
+        \t\t\t\t5.1 Podemos atualizar esta Política de Privacidade periodicamente.
+        <br/>
+        \t\t\t\t5.2 Notificaremos você sobre quaisquer alterações significativas por meio do aplicativo ou por outros meios razoáveis.
+        <br/>
+        \t\t\t\t5.3 O uso contínuo do Listable após tais alterações constitui a sua concordância com a nova política.
+        <br/><br/>
+
+        <b>6. Contato</b>
+        <br/>
+        \t\t\t\t6.1Se você tiver dúvidas ou preocupações sobre esta Política de Privacidade, entre em contato conosco
+        pelo e-mail listable.suporte@gmail.com.
+        <br/><br/>
+        ]]>
+    </string>
 </resources>
