@@ -105,7 +105,7 @@ public class MainActivity extends AppCompatActivity {
         lists.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                Item item = new Item(snapshot.getValue()).toString();
+                Item item = new Item(snapshot.getValue().toString());
                 itemList.add(item);
             }
 
