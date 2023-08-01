@@ -16,9 +16,23 @@ import android.widget.EditText;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import br.senai.sc.listable.R;
+import br.senai.sc.listable.adapter.AdapaterItem;
 import br.senai.sc.listable.databinding.FragmentHomeBinding;
+import br.senai.sc.listable.entity.Item;
 import br.senai.sc.listable.utils.SaveListFirebase;
 
 public class HomeFragment extends Fragment {
@@ -41,6 +55,40 @@ public class HomeFragment extends Fragment {
         addList.setOnClickListener(v -> {
             showModal(container);
         });
+
+        DatabaseReference reference = FirebaseDatabase.getInstance().getReference();
+        DatabaseReference lists = reference.child("lists");
+
+        RecyclerView recyclerView = binding.getRoot().findViewById(R.id.recicleView_items);
+        recyclerView.setLayoutManager(new LinearLayoutManager(container.getContext()));
+        recyclerView.setHasFixedSize(true);
+
+        List<Item> itemList = new ArrayList<>();
+
+
+
+        lists.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                itemList.clear();
+                for (DataSnapshot item: snapshot.getChildren()) {
+                    Item item2 = item.getValue(Item.class);
+                    if(item2 != null) {
+                        itemList.add(item2);
+                    }
+                }
+                AdapaterItem adapaterItem = new AdapaterItem(container.getContext(), itemList);
+                recyclerView.setAdapter(adapaterItem);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+
+
         return binding.getRoot();
     }
 

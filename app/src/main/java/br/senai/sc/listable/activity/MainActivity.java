@@ -88,32 +88,6 @@ public class MainActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
-
-        DatabaseReference reference = FirebaseDatabase.getInstance().getReference();
-        DatabaseReference lists = reference.child("lists");
-
-        RecyclerView recyclerView = findViewById(R.id.recicleView_items);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        recyclerView.setHasFixedSize(true);
-
-        List<Item> itemList = new ArrayList<>();
-
-        AdapaterItem adapaterItem = new AdapaterItem(this, itemList);
-        recyclerView.setAdapter(adapaterItem);
-
-
-        lists.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                Item item = new Item(snapshot.getValue().toString());
-                itemList.add(item);
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
-            }
-        });
     }
 
     @Override

@@ -12,6 +12,10 @@ public class Item {
     private String description;
     private boolean finished;
 
+    public Item() {
+
+    }
+
     public Item(String name) {
         this.id = GeneratorUUID.generate();
         this.name = name;
