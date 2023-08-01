@@ -6,6 +6,7 @@ import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.text.Spannable;
 import android.text.SpannableString;
+import android.text.TextUtils;
 import android.text.style.AbsoluteSizeSpan;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -65,8 +66,6 @@ public class HomeFragment extends Fragment {
 
         List<Item> itemList = new ArrayList<>();
 
-
-
         lists.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -103,8 +102,12 @@ public class HomeFragment extends Fragment {
         EditText input = dialog.findViewById(R.id.add_list_input);
 
         confirmButton.setOnClickListener(view -> {
-            SaveListFirebase.save(input.getText().toString());
-            dialog.dismiss();
+            if (!TextUtils.isEmpty(input.getText())) {
+                SaveListFirebase.save(input.getText().toString());
+                dialog.dismiss();
+            } else {
+                input.setError("Nome inválido!");
+            }
         });
 
         cancelButton.setOnClickListener(view -> {
