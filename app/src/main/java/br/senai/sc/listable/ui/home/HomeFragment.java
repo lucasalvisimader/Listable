@@ -34,6 +34,7 @@ import br.senai.sc.listable.R;
 import br.senai.sc.listable.adapter.AdapaterItem;
 import br.senai.sc.listable.databinding.FragmentHomeBinding;
 import br.senai.sc.listable.entity.Item;
+import br.senai.sc.listable.entity.ShoppingList;
 import br.senai.sc.listable.utils.SaveListFirebase;
 
 public class HomeFragment extends Fragment {
@@ -64,19 +65,19 @@ public class HomeFragment extends Fragment {
         recyclerView.setLayoutManager(new LinearLayoutManager(container.getContext()));
         recyclerView.setHasFixedSize(true);
 
-        List<Item> itemList = new ArrayList<>();
+        List<ShoppingList> shoppingListList = new ArrayList<>();
 
         lists.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                itemList.clear();
-                for (DataSnapshot item: snapshot.getChildren()) {
-                    Item item2 = item.getValue(Item.class);
-                    if(item2 != null) {
-                        itemList.add(item2);
+                shoppingListList.clear();
+                for (DataSnapshot shoppingList: snapshot.getChildren()) {
+                    ShoppingList shoppingList2 = shoppingList.getValue(ShoppingList.class);
+                    if(shoppingList2 != null) {
+                        shoppingListList.add(shoppingList2);
                     }
                 }
-                AdapaterItem adapaterItem = new AdapaterItem(container.getContext(), itemList);
+                AdapaterItem adapaterItem = new AdapaterItem(container.getContext(), shoppingListList);
                 recyclerView.setAdapter(adapaterItem);
             }
 
