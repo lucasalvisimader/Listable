@@ -1,14 +1,15 @@
 package br.senai.sc.listable.entity;
 
+import java.util.Date;
 import java.util.List;
 import java.util.TimeZone;
 
 public class ShoppingList {
     private String id;
     private String name;
-    private TimeZone dateTime;
+    private Date date;
     private Integer total;
-    private Integer done;
+    private boolean done;
     private List<Item> items;
     private Integer itemsDone;
 
@@ -37,12 +38,12 @@ public class ShoppingList {
         this.name = name;
     }
 
-    public TimeZone getDateTime() {
-        return dateTime;
+    public Date getDate() {
+        return date;
     }
 
-    public void setDateTime(TimeZone dateTime) {
-        this.dateTime = dateTime;
+    public void setDate(Date date) {
+        this.date = date;
     }
 
     public Integer getTotal() {
@@ -53,11 +54,11 @@ public class ShoppingList {
         this.total = total;
     }
 
-    public Integer getDone() {
+    public boolean getDone() {
         return done;
     }
 
-    public void setDone(Integer done) {
+    public void setDone(boolean done) {
         this.done = done;
     }
 

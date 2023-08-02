@@ -20,7 +20,6 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -31,9 +30,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import br.senai.sc.listable.R;
-import br.senai.sc.listable.adapter.AdapaterItem;
+import br.senai.sc.listable.adapter.AdapaterShoppingList;
 import br.senai.sc.listable.databinding.FragmentHomeBinding;
-import br.senai.sc.listable.entity.Item;
 import br.senai.sc.listable.entity.ShoppingList;
 import br.senai.sc.listable.utils.SaveListFirebase;
 
@@ -74,10 +72,12 @@ public class HomeFragment extends Fragment {
                 for (DataSnapshot shoppingList: snapshot.getChildren()) {
                     ShoppingList shoppingList2 = shoppingList.getValue(ShoppingList.class);
                     if(shoppingList2 != null) {
+                        shoppingList2.setTotal(0);
+                        shoppingList2.setItemsDone(0);
                         shoppingListList.add(shoppingList2);
                     }
                 }
-                AdapaterItem adapaterItem = new AdapaterItem(container.getContext(), shoppingListList);
+                AdapaterShoppingList adapaterItem = new AdapaterShoppingList(container.getContext(), shoppingListList);
                 recyclerView.setAdapter(adapaterItem);
             }
 
