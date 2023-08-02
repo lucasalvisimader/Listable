@@ -17,8 +17,8 @@ import br.senai.sc.listable.viewHolder.ShoppingListViewHolder;
 
 public class AdapaterShoppingList extends RecyclerView.Adapter<ShoppingListViewHolder> {
 
-    private Context context;
-    private List<ShoppingList> shoppingList;
+    private final Context context;
+    private final List<ShoppingList> shoppingList;
 
     public AdapaterShoppingList(Context context, List<ShoppingList> shoppingList) {
         this.context = context;
@@ -28,7 +28,7 @@ public class AdapaterShoppingList extends RecyclerView.Adapter<ShoppingListViewH
     @NonNull
     @Override
     public ShoppingListViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View shoppingList = LayoutInflater.from(context).inflate(R.layout.shopping_list, parent, false);
+        View shoppingList = LayoutInflater.from(context).inflate(R.layout.shopping_list_fragment, parent, false);
         return new ShoppingListViewHolder(shoppingList);
     }
 
@@ -46,10 +46,10 @@ public class AdapaterShoppingList extends RecyclerView.Adapter<ShoppingListViewH
         Integer itemsDone = shoppingList.get(position).getItemsDone();
         Integer total = shoppingList.get(position).getTotal();
         String totalAndItemsDone = itemsDone + "/" + total;
-        
+
         holder.getTotalAndItemsDone().setText(totalAndItemsDone);
-        Log.i("ternario", String.valueOf((int) ((double)itemsDone / total * 10)));
-        holder.getProgressBar().setProgress(total == 0 ? 0 : (int) ((double)itemsDone / total * 10));
+        Log.i("ternario", String.valueOf((int) ((double) itemsDone / total * 10)));
+        holder.getProgressBar().setProgress(total == 0 ? 0 : (int) ((double) itemsDone / total * 10));
         holder.getProgressBar().setMax(total);
         Log.i("ternario2", String.valueOf(holder.getProgressBar().getProgress()));
         Log.i("ternario3", String.valueOf(holder.getProgressBar().getMax()));

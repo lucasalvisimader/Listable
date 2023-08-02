@@ -8,10 +8,8 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.Date;
-import java.util.List;
 
 import br.senai.sc.listable.R;
-import br.senai.sc.listable.entity.Item;
 
 public class ShoppingListViewHolder extends RecyclerView.ViewHolder {
 
