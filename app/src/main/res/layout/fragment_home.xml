@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/fragment_home_container"
@@ -9,46 +8,46 @@
     android:background="@color/bg"
     tools:layout_editor_absoluteX="0dp"
     tools:layout_editor_absoluteY="-1dp"
-    tools:context=".ui.home.HomeFragment">
+    tools:context=".pages.menu.home.HomeFragment">
 
-<!--    <TextView-->
-<!--        android:id="@+id/title_default"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_alignParentTop="true"-->
-<!--        android:layout_centerHorizontal="true"-->
-<!--        android:layout_marginTop="133dp"-->
-<!--        android:fontFamily="@font/inter_semi_bold"-->
-<!--        android:text="@string/vamos_fazer_suas_listas"-->
-<!--        android:textColor="@color/black_default"-->
-<!--        android:textSize="24sp" />-->
+    <!--    <TextView-->
+    <!--        android:id="@+id/title_default"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_alignParentTop="true"-->
+    <!--        android:layout_centerHorizontal="true"-->
+    <!--        android:layout_marginTop="133dp"-->
+    <!--        android:fontFamily="@font/inter_semi_bold"-->
+    <!--        android:text="@string/vamos_fazer_suas_listas"-->
+    <!--        android:textColor="@color/black_default"-->
+    <!--        android:textSize="24sp" />-->
 
-<!--    <TextView-->
-<!--        android:id="@+id/subtitle_default"-->
-<!--        android:layout_width="282dp"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_below="@id/title_default"-->
-<!--        android:layout_centerHorizontal="true"-->
-<!--        android:gravity="center_horizontal"-->
-<!--        android:text="@string/clique_em_nova_lista_para_criar_a_sua_primeira_lista"-->
-<!--        android:textColor="@color/subtitle"-->
-<!--        android:textSize="20sp" />-->
+    <!--    <TextView-->
+    <!--        android:id="@+id/subtitle_default"-->
+    <!--        android:layout_width="282dp"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_below="@id/title_default"-->
+    <!--        android:layout_centerHorizontal="true"-->
+    <!--        android:gravity="center_horizontal"-->
+    <!--        android:text="@string/clique_em_nova_lista_para_criar_a_sua_primeira_lista"-->
+    <!--        android:textColor="@color/subtitle"-->
+    <!--        android:textSize="20sp" />-->
 
-<!--    <ImageView-->
-<!--        android:id="@+id/list_default"-->
-<!--        android:layout_width="288dp"-->
-<!--        android:layout_height="288dp"-->
-<!--        android:layout_below="@+id/subtitle_default"-->
-<!--        android:layout_alignParentStart="true"-->
-<!--        android:layout_alignParentLeft="true"-->
-<!--        android:layout_marginStart="84dp"-->
-<!--        android:layout_marginLeft="84dp"-->
-<!--        android:layout_marginTop="29dp"-->
-<!--        android:contentDescription="@string/list_default"-->
-<!--        app:srcCompat="@drawable/list_default" />-->
+    <!--    <ImageView-->
+    <!--        android:id="@+id/list_default"-->
+    <!--        android:layout_width="288dp"-->
+    <!--        android:layout_height="288dp"-->
+    <!--        android:layout_below="@+id/subtitle_default"-->
+    <!--        android:layout_alignParentStart="true"-->
+    <!--        android:layout_alignParentLeft="true"-->
+    <!--        android:layout_marginStart="84dp"-->
+    <!--        android:layout_marginLeft="84dp"-->
+    <!--        android:layout_marginTop="29dp"-->
+    <!--        android:contentDescription="@string/list_default"-->
+    <!--        app:srcCompat="@drawable/list_default" />-->
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recicleView_items"
+        android:id="@+id/recicleView_shopping_list"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
