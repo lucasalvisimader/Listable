@@ -66,6 +66,17 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
+        <activity
+            android:name=".pages.activity.AddItemsActivity"
+            android:theme="@style/Theme.Listable"
+            android:screenOrientation="portrait"
+            android:parentActivityName=".pages.activity.ItemsActivity"
+            android:exported="true">
+
+        <meta-data
+            android:name="android.app.lib_name"
+            android:value="" />
+        </activity>
     </application>
 
 </manifest>

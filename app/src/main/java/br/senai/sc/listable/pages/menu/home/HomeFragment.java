@@ -35,7 +35,7 @@ import br.senai.sc.listable.R;
 import br.senai.sc.listable.databinding.FragmentHomeBinding;
 import br.senai.sc.listable.entity.ShoppingList;
 import br.senai.sc.listable.pages.activity.ItemsActivity;
-import br.senai.sc.listable.recycleView.adapter.AdapaterShoppingList;
+import br.senai.sc.listable.recycleView.adapter.AdaaterShoppingList;
 import br.senai.sc.listable.recycleView.eventListener.RecycleItemClickListener;
 import br.senai.sc.listable.utils.SaveListFirebase;
 
@@ -56,9 +56,7 @@ public class HomeFragment extends Fragment {
 
         addList.setText(spannableString);
         addList.setGravity(Gravity.CENTER);
-        addList.setOnClickListener(v -> {
-            showModal(container);
-        });
+        addList.setOnClickListener(v -> showModal(container));
 
         DatabaseReference reference = FirebaseDatabase.getInstance().getReference();
         DatabaseReference lists = reference.child("lists");
@@ -76,12 +74,10 @@ public class HomeFragment extends Fragment {
                 for (DataSnapshot shoppingList : snapshot.getChildren()) {
                     ShoppingList shoppingList2 = shoppingList.getValue(ShoppingList.class);
                     if (shoppingList2 != null) {
-                        shoppingList2.setTotal(0);
-                        shoppingList2.setItemsDone(0);
                         shoppingListList.add(shoppingList2);
                     }
                 }
-                AdapaterShoppingList adapaterItem = new AdapaterShoppingList(container.getContext(), shoppingListList);
+                AdaaterShoppingList adapaterItem = new AdaaterShoppingList(container.getContext(), shoppingListList);
                 recyclerView.setAdapter(adapaterItem);
             }
 
@@ -91,26 +87,27 @@ public class HomeFragment extends Fragment {
             }
         });
 
-        recyclerView.addOnItemTouchListener(
-                new RecycleItemClickListener(container.getContext(), recyclerView, new RecycleItemClickListener.OnItemClickListener() {
-                    @Override
-                    public void onItemClick(View view, int position) {
-                        onClick();
-                    }
+        recyclerView.addOnItemTouchListener(new RecycleItemClickListener(container.getContext(),
+                recyclerView, new RecycleItemClickListener.OnItemClickListener() {
+                @Override
+                public void onItemClick(View view, int position) {
+                    onClick(shoppingListList.get(position));
+                }
 
-                    @Override
-                    public void onLongItemClick(View view, int position) {
-                        Log.i("item clicado muito", position + view.toString());
-                        // do whatever
-                    }
-                })
+                @Override
+                public void onLongItemClick(View view, int position) {
+                    Log.i("item clicado muito", position + view.toString());
+                    // do whatever
+                }
+            })
         );
 
         return binding.getRoot();
     }
 
-    private void onClick() {
+    private void onClick(ShoppingList shoppingList) {
         Intent i = new Intent(getContext(), ItemsActivity.class);
+        i.putExtra("shoppingList", shoppingList);
         startActivity(i);
     }
 

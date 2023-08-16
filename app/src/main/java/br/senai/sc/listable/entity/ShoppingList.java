@@ -1,10 +1,11 @@
 package br.senai.sc.listable.entity;
 
+import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 import java.util.TimeZone;
 
-public class ShoppingList {
+public class ShoppingList implements Serializable {
     private String id;
     private String name;
     private Date date;
@@ -16,10 +17,13 @@ public class ShoppingList {
     public ShoppingList(String id, String name) {
         this.id = id;
         this.name = name;
+        this.total = 0;
+        this.itemsDone = 0;
     }
 
     public ShoppingList() {
-
+        this.total = 0;
+        this.itemsDone = 0;
     }
 
     public String getId() {
