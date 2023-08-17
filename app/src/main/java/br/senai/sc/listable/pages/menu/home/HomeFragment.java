@@ -35,7 +35,7 @@ import br.senai.sc.listable.R;
 import br.senai.sc.listable.databinding.FragmentHomeBinding;
 import br.senai.sc.listable.entity.ShoppingList;
 import br.senai.sc.listable.pages.activity.ItemsActivity;
-import br.senai.sc.listable.recycleView.adapter.AdaaterShoppingList;
+import br.senai.sc.listable.recycleView.adapter.AdapterShoppingList;
 import br.senai.sc.listable.recycleView.eventListener.RecycleItemClickListener;
 import br.senai.sc.listable.utils.SaveListFirebase;
 
@@ -77,7 +77,7 @@ public class HomeFragment extends Fragment {
                         shoppingListList.add(shoppingList2);
                     }
                 }
-                AdaaterShoppingList adapaterItem = new AdaaterShoppingList(container.getContext(), shoppingListList);
+                AdapterShoppingList adapaterItem = new AdapterShoppingList(container.getContext(), shoppingListList);
                 recyclerView.setAdapter(adapaterItem);
             }
 

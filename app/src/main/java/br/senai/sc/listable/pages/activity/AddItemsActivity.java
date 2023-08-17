@@ -2,29 +2,77 @@ package br.senai.sc.listable.pages.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 import br.senai.sc.listable.R;
+import br.senai.sc.listable.entity.Item;
+import br.senai.sc.listable.entity.ShoppingList;
+import br.senai.sc.listable.recycleView.adapter.AdapterItems;
 
 public class AddItemsActivity extends AppCompatActivity {
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.add_items_activity);
+        Log.i("fabiano0", "aaaaa0");
 
-        Toolbar toolbar = findViewById(R.id.add_items_toolbar);
-        setSupportActionBar(toolbar);
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.items_activity);
+        ShoppingList shoppingList;
         Intent intent = getIntent();
 
+        Log.i("fabiano0", "aaaaa0");
+
         if (intent != null) {
-            Objects.requireNonNull(getSupportActionBar()).setTitle("");
-            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            shoppingList = (ShoppingList) intent.getSerializableExtra("shoppingList");
+            DatabaseReference reference = FirebaseDatabase.getInstance().getReference();
+            DatabaseReference lists = reference.child("items");
+
+            RecyclerView recyclerView = findViewById(R.id.recicleView_add_items);
+            recyclerView.setLayoutManager(new LinearLayoutManager(AddItemsActivity.this));
+            recyclerView.setHasFixedSize(true);
+
+            List<Item> itemList = new ArrayList<>();
+
+            lists.addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot snapshot) {
+                    itemList.clear();
+                    for (DataSnapshot item : snapshot.getChildren()) {
+                        Item item2 = item.getValue(Item.class);
+                        if (item2 != null) {
+                            itemList.add(item2);
+                            Log.i("fabiano", item2.toString());
+                        }
+                        Log.i("fabiano2", "aaaaa");
+                    }
+                    Log.i("fabiano3", "aaaaa2");
+                    AdapterItems adapaterItem = new AdapterItems(AddItemsActivity.this, itemList);
+                    recyclerView.setAdapter(adapaterItem);
+                }
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError error) {
+
+                }
+            });
+        } else {
+            throw new NullPointerException();
         }
     }
 

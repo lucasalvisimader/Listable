@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.text.Spannable;
 import android.text.SpannableString;
 import android.text.style.AbsoluteSizeSpan;
+import android.util.Log;
 import android.view.Gravity;
 import android.widget.Button;
 
@@ -26,7 +27,7 @@ import java.util.Objects;
 
 import br.senai.sc.listable.R;
 import br.senai.sc.listable.entity.ShoppingList;
-import br.senai.sc.listable.recycleView.adapter.AdaaterShoppingList;
+import br.senai.sc.listable.recycleView.adapter.AdapterShoppingList;
 
 public class ItemsActivity extends AppCompatActivity {
 
@@ -76,7 +77,7 @@ public class ItemsActivity extends AppCompatActivity {
                             shoppingListList.add(shoppingList2);
                         }
                     }
-                    AdaaterShoppingList adapaterItem = new AdaaterShoppingList(ItemsActivity.this, shoppingListList);
+                    AdapterShoppingList adapaterItem = new AdapterShoppingList(ItemsActivity.this, shoppingListList);
                     recyclerView.setAdapter(adapaterItem);
                 }
 
@@ -92,6 +93,7 @@ public class ItemsActivity extends AppCompatActivity {
     }
 
     private void onClickAddItem(ShoppingList shoppingList) {
+        Log.i("rosivaldo", "aaaaa0");
         Intent i = new Intent(ItemsActivity.this, AddItemsActivity.class);
         i.putExtra("shoppingList", shoppingList);
         startActivity(i);

@@ -14,12 +14,12 @@ import br.senai.sc.listable.R;
 import br.senai.sc.listable.entity.ShoppingList;
 import br.senai.sc.listable.recycleView.viewHolder.ShoppingListViewHolder;
 
-public class AdaaterShoppingList extends RecyclerView.Adapter<ShoppingListViewHolder> {
+public class AdapterShoppingList extends RecyclerView.Adapter<ShoppingListViewHolder> {
 
     private final Context context;
     private final List<ShoppingList> shoppingList;
 
-    public AdaaterShoppingList(Context context, List<ShoppingList> shoppingList) {
+    public AdapterShoppingList(Context context, List<ShoppingList> shoppingList) {
         this.context = context;
         this.shoppingList = shoppingList;
     }
