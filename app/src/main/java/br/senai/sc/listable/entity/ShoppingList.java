@@ -1,6 +1,7 @@
 package br.senai.sc.listable.entity;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.TimeZone;
@@ -11,7 +12,7 @@ public class ShoppingList implements Serializable {
     private Date date;
     private Integer total;
     private boolean done;
-    private List<Item> items;
+    private List<Item> items = new ArrayList<>();
     private Integer itemsDone;
 
     public ShoppingList(String id, String name) {
@@ -68,10 +69,6 @@ public class ShoppingList implements Serializable {
 
     public List<Item> getItems() {
         return items;
-    }
-
-    public void setItems(List<Item> items) {
-        this.items = items;
     }
 
     public void addItem(Item item) {

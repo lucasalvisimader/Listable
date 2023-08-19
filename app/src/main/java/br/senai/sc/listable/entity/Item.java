@@ -1,5 +1,10 @@
 package br.senai.sc.listable.entity;
 
+import android.util.Log;
+
+import java.util.ArrayList;
+import java.util.List;
+
 import br.senai.sc.listable.utils.GeneratorUUID;
 
 public class Item {
@@ -11,10 +16,9 @@ public class Item {
     private String price;
     private String description;
     private boolean finished;
+    private final List<ShoppingList> shoppingLists = new ArrayList<>();
 
-    public Item() {
-
-    }
+    public Item() {}
 
     public Item(String name) {
         this.id = GeneratorUUID.generate();
@@ -85,5 +89,14 @@ public class Item {
 
     public void setFinished(boolean finished) {
         this.finished = finished;
+    }
+
+    public List<ShoppingList> getShoppingLists() {
+        return shoppingLists;
+    }
+
+    public void setShoppingLists(ShoppingList shoppingList) {
+        Log.i("josivaldo", String.valueOf(shoppingLists.size()));
+        this.shoppingLists.add(shoppingList);
     }
 }

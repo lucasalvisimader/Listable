@@ -93,7 +93,6 @@ public class ItemsActivity extends AppCompatActivity {
     }
 
     private void onClickAddItem(ShoppingList shoppingList) {
-        Log.i("rosivaldo", "aaaaa0");
         Intent i = new Intent(ItemsActivity.this, AddItemsActivity.class);
         i.putExtra("shoppingList", shoppingList);
         startActivity(i);
