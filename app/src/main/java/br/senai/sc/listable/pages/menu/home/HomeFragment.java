@@ -32,6 +32,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import br.senai.sc.listable.R;
@@ -83,17 +84,21 @@ public class HomeFragment extends Fragment {
                 AdapterShoppingList adapaterItem = new AdapterShoppingList(container.getContext(), shoppingListList);
                 recyclerView.setAdapter(adapaterItem);
 
-                ImageView emptyListImage = container.findViewById(R.id.home_default_image_no_items);
-                TextView textViewTitle = container.findViewById(R.id.home_default_title);
-                TextView textViewSubtitle = container.findViewById(R.id.home_default_subtitle);
-                if (shoppingListList.isEmpty()) {
-                    emptyListImage.setVisibility(View.VISIBLE);
-                    textViewTitle.setVisibility(View.VISIBLE);
-                    textViewSubtitle.setVisibility(View.VISIBLE);
-                } else {
-                    emptyListImage.setVisibility(View.GONE);
-                    textViewTitle.setVisibility(View.GONE);
-                    textViewSubtitle.setVisibility(View.GONE);
+                try {
+                    ImageView emptyListImage = binding.getRoot().findViewById(R.id.home_default_image_no_items);
+                    TextView textViewTitle = container.findViewById(R.id.home_default_title);
+                    TextView textViewSubtitle = container.findViewById(R.id.home_default_subtitle);
+                    if (shoppingListList.isEmpty()) {
+                        emptyListImage.setVisibility(View.VISIBLE);
+                        textViewTitle.setVisibility(View.VISIBLE);
+                        textViewSubtitle.setVisibility(View.VISIBLE);
+                    } else {
+                        emptyListImage.setVisibility(View.GONE);
+                        textViewTitle.setVisibility(View.GONE);
+                        textViewSubtitle.setVisibility(View.GONE);
+                    }
+                } catch (Exception e) {
+                    Log.i("fatal", Arrays.toString(e.getStackTrace()));
                 }
             }
 

@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.text.Spannable;
 import android.text.SpannableString;
 import android.text.style.AbsoluteSizeSpan;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
@@ -24,6 +25,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
 
@@ -81,18 +83,21 @@ public class ItemsActivity extends AppCompatActivity {
                     }
                     AdapterShoppingListItems adapaterItem = new AdapterShoppingListItems(ItemsActivity.this, itemList, shoppingList);
                     recyclerView.setAdapter(adapaterItem);
-
-                    ImageView emptyListImage = ItemsActivity.this.findViewById(R.id.items_activity_image_no_items);
-                    TextView textViewTitle = ItemsActivity.this.findViewById(R.id.items_default_title);
-                    TextView textViewSubtitle = ItemsActivity.this.findViewById(R.id.items_default_subtitle);
-                    if (itemList.isEmpty()) {
-                        emptyListImage.setVisibility(View.VISIBLE);
-                        textViewTitle.setVisibility(View.VISIBLE);
-                        textViewSubtitle.setVisibility(View.VISIBLE);
-                    } else {
-                        emptyListImage.setVisibility(View.GONE);
-                        textViewTitle.setVisibility(View.GONE);
-                        textViewSubtitle.setVisibility(View.GONE);
+                    try {
+                        ImageView emptyListImage = ItemsActivity.this.findViewById(R.id.items_activity_image_no_items);
+                        TextView textViewTitle = ItemsActivity.this.findViewById(R.id.items_default_title);
+                        TextView textViewSubtitle = ItemsActivity.this.findViewById(R.id.items_default_subtitle);
+                        if (itemList.isEmpty()) {
+                            emptyListImage.setVisibility(View.VISIBLE);
+                            textViewTitle.setVisibility(View.VISIBLE);
+                            textViewSubtitle.setVisibility(View.VISIBLE);
+                        } else {
+                            emptyListImage.setVisibility(View.GONE);
+                            textViewTitle.setVisibility(View.GONE);
+                            textViewSubtitle.setVisibility(View.GONE);
+                        }
+                    } catch (Exception e) {
+                        Log.i("fatal", Arrays.toString(e.getStackTrace()));
                     }
                 }
 

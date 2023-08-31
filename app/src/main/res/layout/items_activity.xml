@@ -17,17 +17,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <!--    <ScrollView-->
-    <!--        android:id="@+id/items_recicleView_items"-->
-    <!--        android:layout_width="match_parent"-->
-    <!--        android:layout_height="676dp"-->
-    <!--        android:fillViewport="true"-->
-    <!--        app:layout_constraintEnd_toEndOf="parent"-->
-    <!--        app:layout_constraintStart_toStartOf="parent"-->
-    <!--        app:layout_constraintTop_toBottomOf="@+id/items_toolbar">-->
-
-    <!--    </ScrollView>-->
-
     <TextView
         android:id="@+id/items_default_title"
         android:layout_width="wrap_content"
@@ -67,28 +56,15 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/items_toolbar" />
 
-
-    <ScrollView
-        android:id="@+id/items_activity_scrollView"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recicleView_items"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/items_toolbar"
-        app:layout_constraintVertical_bias="0.0">
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recicleView_items"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/items_activity_scrollView" />
-
-    </ScrollView>
+        app:layout_constraintTop_toBottomOf="@+id/items_toolbar" />
 
     <Button
         android:id="@+id/add_item"

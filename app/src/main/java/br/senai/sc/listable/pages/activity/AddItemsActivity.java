@@ -2,9 +2,12 @@ package br.senai.sc.listable.pages.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.EditText;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -89,6 +92,23 @@ public class AddItemsActivity extends AppCompatActivity {
                     }
                 })
             );
+
+            EditText searchInput = findViewById(R.id.add_items_search_input);
+
+            searchInput.addTextChangedListener(new TextWatcher() {
+                @Override
+                public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                }
+
+                @Override
+                public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                }
+
+                @Override
+                public void afterTextChanged(Editable editable) {
+                    filterItems(editable.toString().trim(), itemList, shoppingList, recyclerView);
+                }
+            });
         } else {
             throw new NullPointerException();
         }
@@ -97,7 +117,7 @@ public class AddItemsActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId() == android.R.id.home) {
-            finish(); // Encerrar a atividade atual
+            finish();
             return true;
         }
         return super.onOptionsItemSelected(item);
@@ -109,5 +129,18 @@ public class AddItemsActivity extends AppCompatActivity {
         i.putExtra("shoppingList", shoppingList);
         startActivity(i);
         finish();
+    }
+
+    private void filterItems(String searchText, List<Item> itemList, ShoppingList shoppingList, RecyclerView recyclerView) {
+        List<Item> filteredList = new ArrayList<>();
+
+        for (Item item : itemList) {
+            if (item.getName().toLowerCase().contains(searchText.toLowerCase())) {
+                filteredList.add(item);
+            }
+        }
+
+        AdapterItems adapter = new AdapterItems(AddItemsActivity.this, filteredList, shoppingList);
+        recyclerView.setAdapter(adapter);
     }
 }
