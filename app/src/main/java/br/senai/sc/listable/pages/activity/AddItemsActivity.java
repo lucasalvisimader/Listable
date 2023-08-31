@@ -142,5 +142,6 @@ public class AddItemsActivity extends AppCompatActivity {
 
         AdapterItems adapter = new AdapterItems(AddItemsActivity.this, filteredList, shoppingList);
         recyclerView.setAdapter(adapter);
+//        Bug on search - position
     }
 }
