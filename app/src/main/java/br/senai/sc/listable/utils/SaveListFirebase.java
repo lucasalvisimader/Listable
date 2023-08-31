@@ -26,4 +26,12 @@ public class SaveListFirebase {
 
         list.setValue(shoppingList);
     }
+
+    public static void editCheckbox(ShoppingList shoppingList, int position) {
+        DatabaseReference reference = FirebaseDatabase.getInstance().getReference();
+        DatabaseReference list = reference.child("lists").child(shoppingList.getId());
+        shoppingList.getItems().get(position).setFinished(!shoppingList.getItems().get(position).isFinished());
+
+        list.setValue(shoppingList);
+    }
 }

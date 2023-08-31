@@ -5,9 +5,11 @@ import android.os.Bundle;
 import android.text.Spannable;
 import android.text.SpannableString;
 import android.text.style.AbsoluteSizeSpan;
-import android.util.Log;
 import android.view.Gravity;
+import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -26,8 +28,9 @@ import java.util.List;
 import java.util.Objects;
 
 import br.senai.sc.listable.R;
+import br.senai.sc.listable.entity.Item;
 import br.senai.sc.listable.entity.ShoppingList;
-import br.senai.sc.listable.recycleView.adapter.AdapterShoppingList;
+import br.senai.sc.listable.recycleView.adapter.AdapterShoppingListItems;
 
 public class ItemsActivity extends AppCompatActivity {
 
@@ -64,21 +67,33 @@ public class ItemsActivity extends AppCompatActivity {
             RecyclerView recyclerView = findViewById(R.id.recicleView_items);
             recyclerView.setLayoutManager(new LinearLayoutManager(this));
             recyclerView.setHasFixedSize(true);
-
-            List<ShoppingList> shoppingListList = new ArrayList<>();
+            List<Item> itemList = new ArrayList<>();
 
             lists.addValueEventListener(new ValueEventListener() {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot snapshot) {
-                    shoppingListList.clear();
-                    for (DataSnapshot shoppingList : snapshot.getChildren()) {
-                        ShoppingList shoppingList2 = shoppingList.getValue(ShoppingList.class);
-                        if (shoppingList2 != null) {
-                            shoppingListList.add(shoppingList2);
+                    itemList.clear();
+                    for (DataSnapshot item : snapshot.getChildren()) {
+                        Item item2 = item.getValue(Item.class);
+                        if (item2 != null) {
+                            itemList.add(item2);
                         }
                     }
-                    AdapterShoppingList adapaterItem = new AdapterShoppingList(ItemsActivity.this, shoppingListList);
+                    AdapterShoppingListItems adapaterItem = new AdapterShoppingListItems(ItemsActivity.this, itemList, shoppingList);
                     recyclerView.setAdapter(adapaterItem);
+
+                    ImageView emptyListImage = ItemsActivity.this.findViewById(R.id.items_activity_image_no_items);
+                    TextView textViewTitle = ItemsActivity.this.findViewById(R.id.items_default_title);
+                    TextView textViewSubtitle = ItemsActivity.this.findViewById(R.id.items_default_subtitle);
+                    if (itemList.isEmpty()) {
+                        emptyListImage.setVisibility(View.VISIBLE);
+                        textViewTitle.setVisibility(View.VISIBLE);
+                        textViewSubtitle.setVisibility(View.VISIBLE);
+                    } else {
+                        emptyListImage.setVisibility(View.GONE);
+                        textViewTitle.setVisibility(View.GONE);
+                        textViewSubtitle.setVisibility(View.GONE);
+                    }
                 }
 
                 @Override

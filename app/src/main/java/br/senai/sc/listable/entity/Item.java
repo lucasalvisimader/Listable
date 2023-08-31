@@ -2,12 +2,13 @@ package br.senai.sc.listable.entity;
 
 import android.util.Log;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
 import br.senai.sc.listable.utils.GeneratorUUID;
 
-public class Item {
+public class Item implements Serializable {
     private String id;
     private String name;
     private String category;

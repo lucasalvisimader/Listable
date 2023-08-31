@@ -1,6 +1,7 @@
 package br.senai.sc.listable.pages.menu.home;
 
 import android.app.Dialog;
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
@@ -16,6 +17,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -79,6 +82,19 @@ public class HomeFragment extends Fragment {
                 }
                 AdapterShoppingList adapaterItem = new AdapterShoppingList(container.getContext(), shoppingListList);
                 recyclerView.setAdapter(adapaterItem);
+
+                ImageView emptyListImage = container.findViewById(R.id.home_default_image_no_items);
+                TextView textViewTitle = container.findViewById(R.id.home_default_title);
+                TextView textViewSubtitle = container.findViewById(R.id.home_default_subtitle);
+                if (shoppingListList.isEmpty()) {
+                    emptyListImage.setVisibility(View.VISIBLE);
+                    textViewTitle.setVisibility(View.VISIBLE);
+                    textViewSubtitle.setVisibility(View.VISIBLE);
+                } else {
+                    emptyListImage.setVisibility(View.GONE);
+                    textViewTitle.setVisibility(View.GONE);
+                    textViewSubtitle.setVisibility(View.GONE);
+                }
             }
 
             @Override
@@ -91,7 +107,7 @@ public class HomeFragment extends Fragment {
                 recyclerView, new RecycleItemClickListener.OnItemClickListener() {
                 @Override
                 public void onItemClick(View view, int position) {
-                    onClick(shoppingListList.get(position));
+                    onClick(shoppingListList.get(position), container.getContext());
                 }
 
                 @Override
@@ -105,8 +121,8 @@ public class HomeFragment extends Fragment {
         return binding.getRoot();
     }
 
-    private void onClick(ShoppingList shoppingList) {
-        Intent i = new Intent(getContext(), ItemsActivity.class);
+    private void onClick(ShoppingList shoppingList, Context context) {
+        Intent i = new Intent(context, ItemsActivity.class);
         i.putExtra("shoppingList", shoppingList);
         startActivity(i);
     }
