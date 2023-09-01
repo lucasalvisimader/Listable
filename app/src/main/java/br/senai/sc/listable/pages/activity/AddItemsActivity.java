@@ -32,6 +32,9 @@ import br.senai.sc.listable.recycleView.eventListener.RecycleItemClickListener;
 import br.senai.sc.listable.utils.SaveListFirebase;
 
 public class AddItemsActivity extends AppCompatActivity {
+
+    private final List<Item> filteredList = new ArrayList<>();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -82,7 +85,11 @@ public class AddItemsActivity extends AppCompatActivity {
                             recyclerView, new RecycleItemClickListener.OnItemClickListener() {
                     @Override
                     public void onItemClick(View view, int position) {
-                        onClick(itemList.get(position), shoppingList);
+                        if (filteredList.isEmpty()) {
+                            onClick(itemList.get(position), shoppingList);
+                        } else {
+                            onClick(filteredList.get(position), shoppingList);
+                        }
                     }
 
                     @Override
@@ -132,7 +139,7 @@ public class AddItemsActivity extends AppCompatActivity {
     }
 
     private void filterItems(String searchText, List<Item> itemList, ShoppingList shoppingList, RecyclerView recyclerView) {
-        List<Item> filteredList = new ArrayList<>();
+        filteredList.clear();
 
         for (Item item : itemList) {
             if (item.getName().toLowerCase().contains(searchText.toLowerCase())) {
@@ -142,6 +149,5 @@ public class AddItemsActivity extends AppCompatActivity {
 
         AdapterItems adapter = new AdapterItems(AddItemsActivity.this, filteredList, shoppingList);
         recyclerView.setAdapter(adapter);
-//        Bug on search - position
     }
 }

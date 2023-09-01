@@ -11,11 +11,10 @@ import br.senai.sc.listable.R;
 
 public class AddListFragment extends Fragment {
 
-    public AddListFragment() {
-    }
+    public AddListFragment() {}
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.add_list_fragment, container, false);
+        return inflater.inflate(R.layout.fragment_add_list, container, false);
     }
 }

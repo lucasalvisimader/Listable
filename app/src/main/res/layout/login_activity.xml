@@ -7,7 +7,10 @@
     android:background="@color/bg"
     tools:context=".pages.activity.LoginActivity"
     tools:layout_editor_absoluteX="-4dp"
-    tools:layout_editor_absoluteY="0dp">
+    tools:layout_editor_absoluteY="0dp"
+    android:focusableInTouchMode="true"
+    android:clickable="true"
+    android:focusable="true">
 
     <ImageView
         android:id="@+id/logo"

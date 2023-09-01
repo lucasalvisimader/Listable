@@ -134,7 +134,7 @@ public class HomeFragment extends Fragment {
 
     private void showModal(ViewGroup container) {
         Dialog dialog = new Dialog(container.getContext());
-        dialog.setContentView(R.layout.add_list_fragment);
+        dialog.setContentView(R.layout.fragment_add_list);
         dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
 
         Button confirmButton = dialog.findViewById(R.id.add_list_create_button);

@@ -6,7 +6,10 @@
     android:layout_height="match_parent"
     tools:context=".pages.activity.ItemsActivity"
     android:background="@color/bg"
-    app:layout_behavior="@string/appbar_scrolling_view_behavior">
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    android:focusableInTouchMode="true"
+    android:clickable="true"
+    android:focusable="true">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/add_items_toolbar"
@@ -18,7 +21,10 @@
         android:theme="@style/Theme.Header.Menu"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:focusableInTouchMode="true"
+        android:clickable="true"
+        android:focusable="true"/>
 
     <EditText
         android:id="@+id/add_items_search_input"
@@ -30,7 +36,7 @@
         android:elevation="15dp"
         android:fontFamily="@font/inter_semi_bold"
         android:hint="@string/incluir_novo_item"
-        android:inputType="textPersonName"
+        android:inputType="text"
         app:layout_constraintBottom_toBottomOf="@+id/add_items_toolbar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.465"
@@ -54,7 +60,7 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recicleView_add_items"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/add_items_toolbar">
