@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity.RegisterActivity"
+    tools:context=".pages.activity.RegisterActivity"
     android:background="@color/bg">
 
     <ImageView
@@ -24,19 +24,16 @@
         android:layout_width="325dp"
         android:layout_height="70dp"
         android:layout_marginStart="43dp"
-        android:layout_marginLeft="43dp"
         android:layout_marginTop="50dp"
         android:layout_marginEnd="43dp"
-        android:layout_marginRight="43dp"
+        android:autofillHints=""
         android:ems="10"
         android:fontFamily="@font/inter_semi_bold"
         android:hint="@string/apelido"
         android:inputType="text"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/logo"
-        android:autofillHints="" />
+        app:layout_constraintTop_toBottomOf="@+id/logo" />
 
     <EditText
         android:id="@+id/register_email"
@@ -44,17 +41,14 @@
         android:layout_width="325dp"
         android:layout_height="70dp"
         android:layout_marginStart="43dp"
-        android:layout_marginLeft="43dp"
         android:layout_marginTop="28dp"
         android:layout_marginEnd="43dp"
-        android:layout_marginRight="43dp"
         android:autofillHints=""
         android:ems="10"
         android:fontFamily="@font/inter_semi_bold"
         android:hint="@string/email"
         android:inputType="textEmailAddress"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/register_nickname" />
 
@@ -64,17 +58,14 @@
         android:layout_width="325dp"
         android:layout_height="70dp"
         android:layout_marginStart="43dp"
-        android:layout_marginLeft="43dp"
         android:layout_marginTop="28dp"
         android:layout_marginEnd="43dp"
-        android:layout_marginRight="43dp"
         android:autofillHints=""
         android:ems="10"
         android:fontFamily="@font/inter_semi_bold"
         android:hint="@string/senha"
         android:inputType="textPassword"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/register_email" />
 
@@ -84,17 +75,14 @@
         android:layout_width="325dp"
         android:layout_height="70dp"
         android:layout_marginStart="43dp"
-        android:layout_marginLeft="43dp"
         android:layout_marginTop="28dp"
         android:layout_marginEnd="43dp"
-        android:layout_marginRight="43dp"
         android:autofillHints=""
         android:ems="10"
         android:fontFamily="@font/inter"
         android:hint="@string/confirmar_senha"
         android:inputType="textPassword"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/register_password" />
 
@@ -104,10 +92,8 @@
         android:layout_width="325dp"
         android:layout_height="70dp"
         android:layout_marginStart="43dp"
-        android:layout_marginLeft="43dp"
         android:layout_marginTop="35dp"
         android:layout_marginEnd="43dp"
-        android:layout_marginRight="43dp"
         android:fontFamily="@font/inter"
         android:letterSpacing="0"
         android:text="@string/fazer_cadastro"
@@ -115,7 +101,6 @@
         android:textSize="20sp"
         app:cornerRadius="10dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/register_confirm_password" />
 

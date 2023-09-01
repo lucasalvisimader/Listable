@@ -31,4 +31,12 @@
     <style name="menu_title_style" parent="@style/TextAppearance.AppCompat.Widget.ActionBar.Title">
         <item name="android:layout_gravity">center</item>
     </style>
+
+    <style name="items_input">
+        <item name="android:background">@drawable/rounded_corners</item>
+        <item name="android:textColor">@color/black_default</item>
+        <item name="android:textColorHint">@color/items_input</item>
+        <item name="android:backgroundTint">@color/bg</item>
+        <item name="android:paddingLeft">10dp</item>
+    </style>
 </resources>

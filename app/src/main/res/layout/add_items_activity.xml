@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".pages.activity.ItemsActivity"
+    android:background="@color/bg"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    android:focusableInTouchMode="true"
+    android:clickable="true"
+    android:focusable="true">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/add_items_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@drawable/header_fragment_bg"
+        android:textAlignment="center"
+        android:theme="@style/Theme.Header.Menu"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:focusableInTouchMode="true"
+        android:clickable="true"
+        android:focusable="true"/>
+
+    <EditText
+        android:id="@+id/add_items_search_input"
+        style="@style/items_input"
+        android:layout_width="250dp"
+        android:layout_height="40dp"
+        android:autofillHints=""
+        android:ems="10"
+        android:elevation="15dp"
+        android:fontFamily="@font/inter_semi_bold"
+        android:hint="@string/incluir_novo_item"
+        android:inputType="text"
+        app:layout_constraintBottom_toBottomOf="@+id/add_items_toolbar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.465"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/add_items_toolbar" />
+
+    <ImageButton
+        android:id="@+id/add_items_microphone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:background="@drawable/rounded_corners_white"
+        android:padding="5dp"
+        android:elevation="15dp"
+        app:layout_constraintBottom_toBottomOf="@+id/add_items_toolbar"
+        app:layout_constraintEnd_toEndOf="@+id/add_items_toolbar"
+        app:layout_constraintStart_toEndOf="@+id/add_items_search_input"
+        app:layout_constraintTop_toTopOf="@+id/add_items_toolbar"
+        app:srcCompat="@drawable/microphone_push_to_talk" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recicleView_add_items"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/add_items_toolbar">
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+    <!--    <ScrollView-->
+<!--        android:id="@+id/add_item_recicleView_items"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="676dp"-->
+<!--        android:fillViewport="true"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/items_toolbar">-->
+
+<!--    </ScrollView>-->
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,66 +1,81 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fragment_home_container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/bg"
     tools:layout_editor_absoluteX="0dp"
     tools:layout_editor_absoluteY="-1dp"
-    tools:context=".ui.home.HomeFragment">
+    tools:context=".pages.menu.home.HomeFragment">
 
     <TextView
-        android:id="@+id/title_default"
+        android:id="@+id/home_default_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="133dp"
+        android:visibility="gone"
         android:fontFamily="@font/inter_semi_bold"
         android:text="@string/vamos_fazer_suas_listas"
         android:textColor="@color/black_default"
-        android:textSize="24sp" />
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/home_default_subtitle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/subtitle_default"
+        android:id="@+id/home_default_subtitle"
         android:layout_width="282dp"
         android:layout_height="wrap_content"
-        android:layout_below="@id/title_default"
+        android:layout_below="@id/home_default_title"
         android:layout_centerHorizontal="true"
         android:gravity="center_horizontal"
+        android:visibility="gone"
         android:text="@string/clique_em_nova_lista_para_criar_a_sua_primeira_lista"
         android:textColor="@color/subtitle"
-        android:textSize="20sp" />
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/home_default_image_no_items"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
-        android:id="@+id/list_default"
+        android:id="@+id/home_default_image_no_items"
         android:layout_width="288dp"
         android:layout_height="288dp"
         android:layout_below="@+id/subtitle_default"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_marginStart="84dp"
-        android:layout_marginLeft="84dp"
-        android:layout_marginTop="29dp"
         android:contentDescription="@string/list_default"
-        app:srcCompat="@drawable/list_default" />
+        app:layout_constraintBottom_toBottomOf="@+id/recicleView_shopping_list"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:visibility="gone"
+        app:layout_constraintHorizontal_bias="0.65"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/recicleView_shopping_list"
+        app:srcCompat="@drawable/default_lists_default" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recicleView_shopping_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </androidx.recyclerview.widget.RecyclerView>
 
     <Button
         android:id="@+id/add_list"
         style="@style/main_add"
         android:layout_width="wrap_content"
         android:layout_height="60dp"
-        android:layout_below="@+id/list_default"
         android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_marginTop="87dp"
         android:layout_marginEnd="43dp"
-        android:layout_marginRight="43dp"
+        android:layout_marginBottom="70dp"
         android:fontFamily="@font/inter"
         android:gravity="center"
         android:letterSpacing="0"
         android:text="@string/nova_lista"
         android:textSize="20sp"
-        app:cornerRadius="20dp" />
-</RelativeLayout>
+        app:cornerRadius="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
