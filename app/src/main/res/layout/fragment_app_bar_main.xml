@@ -22,6 +22,6 @@
             android:theme="@style/Theme.Header.Menu" />
     </com.google.android.material.appbar.AppBarLayout>
 
-    <include layout="@layout/content_main" />
+    <include layout="@layout/fragment_content_main" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
