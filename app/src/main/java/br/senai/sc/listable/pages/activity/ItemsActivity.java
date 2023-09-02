@@ -39,7 +39,7 @@ public class ItemsActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.items_activity);
+        setContentView(R.layout.activity_items);
 
         Button addItem = findViewById(R.id.add_item);
 

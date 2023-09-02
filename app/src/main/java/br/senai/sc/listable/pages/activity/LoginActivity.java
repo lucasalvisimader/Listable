@@ -7,12 +7,9 @@ import android.text.Html;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
-
-import org.w3c.dom.Text;
 
 import br.senai.sc.listable.R;
 
@@ -21,7 +18,7 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.login_activity);
+        setContentView(R.layout.activity_login);
         TextView loginEmail = findViewById(R.id.login_email);
         TextView loginPassword = findViewById(R.id.login_password);
         TextView loginToRegister = findViewById(R.id.login_to_register_text);

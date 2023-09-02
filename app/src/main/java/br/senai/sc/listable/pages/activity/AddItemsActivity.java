@@ -38,7 +38,7 @@ public class AddItemsActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.add_items_activity);
+        setContentView(R.layout.activity_add_items);
 
         ShoppingList shoppingList;
         Intent intent = getIntent();
