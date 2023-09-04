@@ -57,7 +57,7 @@ public class LoginActivity extends AppCompatActivity {
                     user.setPassword(textPassword);
                     validateLogin(user);
                 } else {
-                    Toast.makeText(LoginActivity.this, "Preecha a senha",
+                    Toast.makeText(LoginActivity.this, "Preencha a senha",
                             Toast.LENGTH_SHORT).show();
                 }
             } else {
