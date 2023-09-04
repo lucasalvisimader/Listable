@@ -12,21 +12,25 @@ import org.jetbrains.annotations.NotNull;
 public class GetUserFromFirebase {
     private static FirebaseAuth firebaseAuth = ConfigurationFirebase.getFirebaseAuth();
     private static DatabaseReference databaseReference = ConfigurationFirebase.getFirebase();
-    private static User user = new User();
-    public static User get() {
+    public interface UserCallback {
+        void onUserLoaded(User user);
+        void onError(DatabaseError error);
+    }
+    public static void get(UserCallback callback) {
         databaseReference.child("users").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull @NotNull DataSnapshot snapshot) {
                 if (snapshot.exists()) {
-                    user = snapshot.getValue(User.class);
+                    User user = snapshot.getValue(User.class);
+                    callback.onUserLoaded(user);
                 }
             }
 
             @Override
             public void onCancelled(@NonNull @NotNull DatabaseError error) {
-
+                callback.onError(error);
             }
         });
-        return user;
     }
+
 }

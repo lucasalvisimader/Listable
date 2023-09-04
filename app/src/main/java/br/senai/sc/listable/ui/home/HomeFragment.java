@@ -19,9 +19,12 @@ import androidx.fragment.app.Fragment;
 
 import br.senai.sc.listable.R;
 import br.senai.sc.listable.databinding.FragmentHomeBinding;
+import br.senai.sc.listable.entity.User;
 import br.senai.sc.listable.utils.ConfigurationFirebase;
+import br.senai.sc.listable.utils.GetUserFromFirebase;
 import br.senai.sc.listable.utils.SaveListFirebase;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseError;
 
 public class HomeFragment extends Fragment {
 
@@ -54,9 +57,18 @@ public class HomeFragment extends Fragment {
         Button cancelButton = dialog.findViewById(R.id.add_list_cancel_button);
         EditText input = dialog.findViewById(R.id.add_list_input);
 
-        confirmButton.setOnClickListener(view -> {
-            SaveListFirebase.save(input.getText().toString(), firebaseAuth.getCurrentUser());
-            dialog.dismiss();
+        GetUserFromFirebase.get(new GetUserFromFirebase.UserCallback() {
+            @Override
+            public void onUserLoaded(User user) {
+                confirmButton.setOnClickListener(view -> {
+                    SaveListFirebase.save(input.getText().toString(), user);
+                    dialog.dismiss();
+                });
+            }
+
+            @Override
+            public void onError(DatabaseError error) {
+            }
         });
 
         cancelButton.setOnClickListener(view -> {
@@ -65,6 +77,7 @@ public class HomeFragment extends Fragment {
 
         dialog.show();
     }
+
 
     @Override
     public void onDestroyView() {
