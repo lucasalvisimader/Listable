@@ -10,10 +10,12 @@ public class ShoppingList {
     private Integer total;
     private Integer done;
     private List<Item> items;
+    private User user;
 
-    public ShoppingList(String id, String name) {
+    public ShoppingList(String id, String name, User user) {
         this.id = id;
         this.name = name;
+        this.user = user;
     }
 
     public String getId() {
@@ -70,5 +72,13 @@ public class ShoppingList {
 
     public void removeItem(Item item) {
         items.remove(item);
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 }
