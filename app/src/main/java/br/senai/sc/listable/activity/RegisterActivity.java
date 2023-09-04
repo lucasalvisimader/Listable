@@ -1,5 +1,6 @@
 package br.senai.sc.listable.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.Html;
 import android.widget.Button;
@@ -38,12 +39,32 @@ public class RegisterActivity extends AppCompatActivity {
             String textPassword = registerPassword.getText().toString();
             String textConfirmPassword = registerConfirmPassword.getText().toString();
 
-            if (!textNickname.isEmpty()) {
-
-            } else {
-                Toast.makeText(RegisterActivity.this, "Preecha o apelido",
-                        Toast.LENGTH_SHORT).show();
+            if (textNickname.isEmpty()) {
+                showToast("Preencha o apelido");
+                return;
             }
+
+            if (textEmail.isEmpty()) {
+                showToast("Preencha o email");
+                return;
+            }
+
+            if (textPassword.isEmpty()) {
+                showToast("Preencha a senha");
+                return;
+            }
+
+            if (!textPassword.equals(textConfirmPassword)) {
+                showToast("As senhas não coincidem");
+                return;
+            }
+
+//            if (emailExistsInFirebase)
+            finish();
         });
+    }
+
+    private void showToast(String message) {
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
     }
 }
