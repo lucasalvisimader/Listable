@@ -10,6 +10,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import br.senai.sc.listable.R;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class RegisterActivity extends AppCompatActivity {
 
@@ -58,6 +59,8 @@ public class RegisterActivity extends AppCompatActivity {
                 showToast("As senhas não coincidem");
                 return;
             }
+
+            FirebaseAuth.getInstance().createUserWithEmailAndPassword(textEmail, textPassword);
 
 //            if (emailExistsInFirebase)
             finish();
