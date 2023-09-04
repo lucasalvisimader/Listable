@@ -10,7 +10,6 @@ import com.google.firebase.database.ValueEventListener;
 import org.jetbrains.annotations.NotNull;
 
 public class GetUserFromFirebase {
-    private static FirebaseAuth firebaseAuth = ConfigurationFirebase.getFirebaseAuth();
     private static DatabaseReference databaseReference = ConfigurationFirebase.getFirebase();
     public interface UserCallback {
         void onUserLoaded(User user);

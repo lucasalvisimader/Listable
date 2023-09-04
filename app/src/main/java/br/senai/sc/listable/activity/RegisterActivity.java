@@ -11,6 +11,8 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import br.senai.sc.listable.R;
+import br.senai.sc.listable.utils.SaveListFirebase;
+import br.senai.sc.listable.utils.SaveUserFirebase;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -68,6 +70,7 @@ public class RegisterActivity extends AppCompatActivity {
             auth.createUserWithEmailAndPassword(textEmail, textPassword)
                     .addOnCompleteListener(new RegisterActivity(), task -> {
                         if (task.isSuccessful()) {
+                            SaveUserFirebase.save(textNickname, textEmail);
                             finish();
                         } else {
                             showToast("Erro ao fazer o cadastro");

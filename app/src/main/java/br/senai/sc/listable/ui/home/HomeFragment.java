@@ -27,9 +27,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseError;
 
 public class HomeFragment extends Fragment {
-
     private FragmentHomeBinding binding;
-    private FirebaseAuth firebaseAuth = ConfigurationFirebase.getFirebaseAuth();
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
