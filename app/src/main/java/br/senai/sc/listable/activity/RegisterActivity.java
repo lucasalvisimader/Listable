@@ -11,6 +11,11 @@ import br.senai.sc.listable.R;
 
 public class RegisterActivity extends AppCompatActivity {
 
+    private TextView registerNickname = findViewById(R.id.register_nickname);
+    private TextView registerEmail = findViewById(R.id.register_email);
+    private TextView registerPassword = findViewById(R.id.register_password);
+    private TextView registerConfirmPassword = findViewById(R.id.register_confirm_password);
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

@@ -1,13 +1,11 @@
 package br.senai.sc.listable.utils;
 
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
 
 public class ConfigurationFirebase {
 
     private static FirebaseAuth auth;
-    private static DatabaseReference firebaseRef;
+//    private static DatabaseReference firebaseRef;
 //    private static StorageReference storage;
 
     public static FirebaseAuth getFirebaseAuth() {
@@ -17,12 +15,12 @@ public class ConfigurationFirebase {
         return auth;
     }
 
-    public static DatabaseReference getFirebase() {
-        if(firebaseRef == null) {
-            firebaseRef = FirebaseDatabase.getInstance().getReference();
-        }
-        return firebaseRef;
-    }
+//    public static DatabaseReference getFirebase() {
+//        if(firebaseRef == null) {
+//            firebaseRef = FirebaseDatabase.getInstance().getReference();
+//        }
+//        return firebaseRef;
+//    }
 
 //    public static StorageReference getFirebaseStorage() {
 //        if (storage == null) {
