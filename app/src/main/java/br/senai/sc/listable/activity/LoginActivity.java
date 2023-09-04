@@ -56,12 +56,10 @@ public class LoginActivity extends AppCompatActivity {
                     user.setPassword(textPassword);
                     validateLogin(user);
                 } else {
-                    Toast.makeText(LoginActivity.this, "Preencha a senha",
-                            Toast.LENGTH_SHORT).show();
+                    showToast("Preencha a senha");
                 }
             } else {
-                Toast.makeText(LoginActivity.this, "Preencha a email",
-                        Toast.LENGTH_SHORT).show();
+                showToast("Preencha a email");
             }
         });
     }
@@ -75,9 +73,7 @@ public class LoginActivity extends AppCompatActivity {
                         startActivity(intent);
                         finish();
                     } else {
-                        Toast.makeText(LoginActivity.this,
-                                "E-mail ou senha inválidos",
-                                Toast.LENGTH_SHORT).show();
+                        showToast("E-mail ou senha inválidos");
                     }
                 });
     }
@@ -89,5 +85,9 @@ public class LoginActivity extends AppCompatActivity {
             startActivity(intent);
             finish();
         }
+    }
+
+    private void showToast(String message) {
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
     }
 }

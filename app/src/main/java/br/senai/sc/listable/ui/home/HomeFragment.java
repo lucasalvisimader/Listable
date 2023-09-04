@@ -19,11 +19,14 @@ import androidx.fragment.app.Fragment;
 
 import br.senai.sc.listable.R;
 import br.senai.sc.listable.databinding.FragmentHomeBinding;
+import br.senai.sc.listable.utils.ConfigurationFirebase;
 import br.senai.sc.listable.utils.SaveListFirebase;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class HomeFragment extends Fragment {
 
     private FragmentHomeBinding binding;
+    private FirebaseAuth firebaseAuth = ConfigurationFirebase.getFirebaseAuth();
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -38,12 +41,9 @@ public class HomeFragment extends Fragment {
 
         addList.setText(spannableString);
         addList.setGravity(Gravity.CENTER);
-        addList.setOnClickListener(v -> {
-            showModal(container);
-        });
+        addList.setOnClickListener(v -> showModal(container));
         return binding.getRoot();
     }
-
 
     private void showModal(ViewGroup container) {
         Dialog dialog = new Dialog(container.getContext());
@@ -55,7 +55,7 @@ public class HomeFragment extends Fragment {
         EditText input = dialog.findViewById(R.id.add_list_input);
 
         confirmButton.setOnClickListener(view -> {
-            SaveListFirebase.save(input.getText().toString());
+            SaveListFirebase.save(input.getText().toString(), firebaseAuth.getCurrentUser());
             dialog.dismiss();
         });
 

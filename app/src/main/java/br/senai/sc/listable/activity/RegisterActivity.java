@@ -7,10 +7,15 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import android.widget.Toast;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import br.senai.sc.listable.R;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import org.jetbrains.annotations.NotNull;
 
 public class RegisterActivity extends AppCompatActivity {
     private FirebaseAuth auth;
@@ -60,10 +65,16 @@ public class RegisterActivity extends AppCompatActivity {
                 return;
             }
 
-            auth.createUserWithEmailAndPassword(textEmail, textPassword);
+            auth.createUserWithEmailAndPassword(textEmail, textPassword)
+                    .addOnCompleteListener(new RegisterActivity(), task -> {
+                        if (task.isSuccessful()) {
+                            finish();
+                        } else {
+                            showToast("Erro ao fazer o cadastro");
+                        }
+                    });
 
 //            if (emailExistsInFirebase)
-            finish();
         });
     }
 
