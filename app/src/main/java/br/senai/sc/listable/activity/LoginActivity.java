@@ -16,7 +16,6 @@ import br.senai.sc.listable.utils.ConfigurationFirebase;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class LoginActivity extends AppCompatActivity {
-
     private User user;
     private FirebaseAuth auth;
     private final Button loginSubmit = findViewById(R.id.login_submit);

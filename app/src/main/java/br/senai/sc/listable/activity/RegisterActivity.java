@@ -13,7 +13,7 @@ import br.senai.sc.listable.R;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class RegisterActivity extends AppCompatActivity {
-
+    private FirebaseAuth auth;
     private final TextView registerNickname = findViewById(R.id.register_nickname);
     private final TextView registerEmail = findViewById(R.id.register_email);
     private final TextView registerPassword = findViewById(R.id.register_password);
@@ -60,7 +60,7 @@ public class RegisterActivity extends AppCompatActivity {
                 return;
             }
 
-            FirebaseAuth.getInstance().createUserWithEmailAndPassword(textEmail, textPassword);
+            auth.createUserWithEmailAndPassword(textEmail, textPassword);
 
 //            if (emailExistsInFirebase)
             finish();
