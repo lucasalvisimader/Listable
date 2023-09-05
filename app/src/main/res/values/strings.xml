@@ -160,4 +160,11 @@
         <br/><br/>
         ]]>
     </string>
+    <string name="name">name</string>
+    <string name="_10_25">10/25</string>
+    <string name="incluir_novo_item">Incluir novo item</string>
+    <string name="adicionar">adicionar</string>
+    <string name="pasta_de_dentes">Pasta de dentes</string>
+    <string name="sua_lista_est_vazia">Sua lista está vazia</string>
+    <string name="clique_em_adicionar_para_incluir_produtos">Clique em “Adicionar” para incluir produtos</string>
 </resources>

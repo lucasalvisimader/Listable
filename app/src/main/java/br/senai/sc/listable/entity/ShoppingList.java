@@ -1,15 +1,19 @@
 package br.senai.sc.listable.entity;
 
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.TimeZone;
 
-public class ShoppingList {
+public class ShoppingList implements Serializable {
     private String id;
     private String name;
-    private TimeZone dateTime;
+    private Date date;
     private Integer total;
-    private Integer done;
-    private List<Item> items;
+    private boolean done;
+    private List<Item> items = new ArrayList<>();
+    private Integer itemsDone;
     private String idUser;
 
     public ShoppingList(String id, String name, String idUser) {
@@ -19,6 +23,8 @@ public class ShoppingList {
     }
 
     public ShoppingList() {
+        this.total = 0;
+        this.itemsDone = 0;
     }
 
     public String getId() {
@@ -37,12 +43,12 @@ public class ShoppingList {
         this.name = name;
     }
 
-    public TimeZone getDateTime() {
-        return dateTime;
+    public Date getDate() {
+        return date;
     }
 
-    public void setDateTime(TimeZone dateTime) {
-        this.dateTime = dateTime;
+    public void setDate(Date date) {
+        this.date = date;
     }
 
     public Integer getTotal() {
@@ -53,20 +59,16 @@ public class ShoppingList {
         this.total = total;
     }
 
-    public Integer getDone() {
+    public boolean getDone() {
         return done;
     }
 
-    public void setDone(Integer done) {
+    public void setDone(boolean done) {
         this.done = done;
     }
 
     public List<Item> getItems() {
         return items;
-    }
-
-    public void setItems(List<Item> items) {
-        this.items = items;
     }
 
     public void addItem(Item item) {
@@ -83,5 +85,13 @@ public class ShoppingList {
 
     public void setIdUser(String idUser) {
         this.idUser = idUser;
+    }
+
+    public Integer getItemsDone() {
+        return itemsDone;
+    }
+
+    public void setItemsDone(Integer itemsDone) {
+        this.itemsDone = itemsDone;
     }
 }

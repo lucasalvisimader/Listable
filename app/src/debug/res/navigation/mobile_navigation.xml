@@ -7,37 +7,37 @@
 
     <fragment
         android:id="@+id/nav_home"
-        android:name="br.senai.sc.listable.ui.home.HomeFragment"
+        android:name="br.senai.sc.listable.pages.menu.home.HomeFragment"
         android:label="@string/menu_list"
         tools:layout="@layout/fragment_home" />
 
     <fragment
         android:id="@+id/nav_trash"
-        android:name="br.senai.sc.listable.ui.trash.TrashFragment"
+        android:name="br.senai.sc.listable.pages.menu.trash.TrashFragment"
         android:label="@string/menu_trash"
         tools:layout="@layout/fragment_trash" />
 
     <fragment
         android:id="@+id/nav_history"
-        android:name="br.senai.sc.listable.ui.history.HistoryFragment"
+        android:name="br.senai.sc.listable.pages.menu.history.HistoryFragment"
         android:label="@string/menu_history"
         tools:layout="@layout/fragment_history" />
 
     <fragment
         android:id="@+id/nav_config"
-        android:name="br.senai.sc.listable.ui.config.ConfigFragment"
+        android:name="br.senai.sc.listable.pages.menu.config.ConfigFragment"
         android:label="@string/configuracao"
         tools:layout="@layout/fragment_config" />
 
     <fragment
         android:id="@+id/nav_help"
-        android:name="br.senai.sc.listable.ui.help.HelpFragment"
+        android:name="br.senai.sc.listable.pages.menu.help.HelpFragment"
         android:label="@string/ajuda"
         tools:layout="@layout/fragment_help" />
 
     <fragment
         android:id="@+id/nav_terms"
-        android:name="br.senai.sc.listable.ui.terms.TermsFragment"
+        android:name="br.senai.sc.listable.pages.menu.terms.TermsFragment"
         android:label="@string/termos_privacidade"
         tools:layout="@layout/fragment_terms" />
 </navigation>
