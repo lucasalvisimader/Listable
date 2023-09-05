@@ -7,30 +7,40 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import android.widget.Toast;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import br.senai.sc.listable.R;
 import br.senai.sc.listable.utils.SaveListFirebase;
 import br.senai.sc.listable.utils.SaveUserFirebase;
+
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+
 import org.jetbrains.annotations.NotNull;
 
 public class RegisterActivity extends AppCompatActivity {
     private FirebaseAuth auth;
-    private final TextView registerNickname = findViewById(R.id.register_nickname);
-    private final TextView registerEmail = findViewById(R.id.register_email);
-    private final TextView registerPassword = findViewById(R.id.register_password);
-    private final TextView registerConfirmPassword = findViewById(R.id.register_confirm_password);
-    private final Button registerSubmit = findViewById(R.id.register_submit);
+    private TextView registerNickname;
+    private TextView registerEmail;
+    private TextView registerPassword;
+    private TextView registerConfirmPassword;
+    private Button registerSubmit;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.register_activity);
+
+        registerNickname = findViewById(R.id.register_nickname);
+        registerEmail = findViewById(R.id.register_email);
+        registerPassword = findViewById(R.id.register_password);
+        registerConfirmPassword = findViewById(R.id.register_confirm_password);
+        registerSubmit = findViewById(R.id.register_submit);
+
         TextView registerToLogin = findViewById(R.id.register_to_login_text);
 
         String html = "<font color=#1C1C1C>Já possui conta? </font><font color=#FD9226>Ir para login</font>";
