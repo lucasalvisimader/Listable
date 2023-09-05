@@ -10,12 +10,15 @@ public class ShoppingList {
     private Integer total;
     private Integer done;
     private List<Item> items;
-    private User user;
+    private String idUser;
 
-    public ShoppingList(String id, String name, User user) {
+    public ShoppingList(String id, String name, String idUser) {
         this.id = id;
         this.name = name;
-        this.user = user;
+        this.idUser = idUser;
+    }
+
+    public ShoppingList() {
     }
 
     public String getId() {
@@ -74,11 +77,11 @@ public class ShoppingList {
         items.remove(item);
     }
 
-    public User getUser() {
-        return user;
+    public String getIdUser() {
+        return idUser;
     }
 
-    public void setUser(User user) {
-        this.user = user;
+    public void setIdUser(String idUser) {
+        this.idUser = idUser;
     }
 }

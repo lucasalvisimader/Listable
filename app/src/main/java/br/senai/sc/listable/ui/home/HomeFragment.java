@@ -19,14 +19,17 @@ import androidx.fragment.app.Fragment;
 
 import br.senai.sc.listable.R;
 import br.senai.sc.listable.databinding.FragmentHomeBinding;
+import br.senai.sc.listable.entity.ShoppingList;
 import br.senai.sc.listable.entity.User;
 import br.senai.sc.listable.utils.ConfigurationFirebase;
 import br.senai.sc.listable.utils.GetUserFromFirebase;
 import br.senai.sc.listable.utils.SaveListFirebase;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
 
 public class HomeFragment extends Fragment {
+    private static DatabaseReference databaseReference = ConfigurationFirebase.getFirebase();
     private FragmentHomeBinding binding;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -57,21 +60,23 @@ public class HomeFragment extends Fragment {
 
         GetUserFromFirebase.get(new GetUserFromFirebase.UserCallback() {
             @Override
-            public void onUserLoaded(User user) {
+            public void onUserLoaded(String idUser) {
                 confirmButton.setOnClickListener(view -> {
-                    SaveListFirebase.save(input.getText().toString(), user);
+                    ShoppingList list = new ShoppingList();
+                    list.setName(input.getText().toString());
+                    list.setIdUser(idUser);
+                    SaveListFirebase.save(list);
                     dialog.dismiss();
                 });
             }
 
             @Override
             public void onError(DatabaseError error) {
+                // Tratar erros, se necessário.
             }
         });
 
-        cancelButton.setOnClickListener(view -> {
-            dialog.dismiss();
-        });
+        cancelButton.setOnClickListener(view -> dialog.dismiss());
 
         dialog.show();
     }
