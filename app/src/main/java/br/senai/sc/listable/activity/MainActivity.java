@@ -65,7 +65,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-                return null;
             }
 
             @Override
