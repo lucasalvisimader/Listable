@@ -29,11 +29,13 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Objects;
 
 import br.senai.sc.listable.R;
 import br.senai.sc.listable.databinding.FragmentHomeBinding;
@@ -41,6 +43,8 @@ import br.senai.sc.listable.entity.ShoppingList;
 import br.senai.sc.listable.pages.activity.ItemsActivity;
 import br.senai.sc.listable.recycleView.adapter.AdapterShoppingList;
 import br.senai.sc.listable.recycleView.eventListener.RecycleItemClickListener;
+import br.senai.sc.listable.utils.ConfigurationFirebase;
+import br.senai.sc.listable.utils.GetUserFromFirebase;
 import br.senai.sc.listable.utils.SaveListFirebase;
 
 public class HomeFragment extends Fragment {
@@ -141,18 +145,25 @@ public class HomeFragment extends Fragment {
         Button cancelButton = dialog.findViewById(R.id.add_list_cancel_button);
         EditText input = dialog.findViewById(R.id.add_list_input);
 
-        confirmButton.setOnClickListener(view -> {
-            if (!TextUtils.isEmpty(input.getText())) {
-                SaveListFirebase.save(input.getText().toString());
-                dialog.dismiss();
-            } else {
-                input.setError("Nome inválido!");
+        GetUserFromFirebase.get(new GetUserFromFirebase.UserCallback() {
+            @Override
+            public void onUserLoaded(String idUser) {
+                confirmButton.setOnClickListener(view -> {
+                    ShoppingList list = new ShoppingList();
+                    list.setName(input.getText().toString());
+                    list.setIdUser(idUser);
+                    SaveListFirebase.save(list);
+                    dialog.dismiss();
+                });
+            }
+
+            @Override
+            public void onError(DatabaseError error) {
+                // Tratar erros, se necessário.
             }
         });
 
-        cancelButton.setOnClickListener(view -> {
-            dialog.dismiss();
-        });
+        cancelButton.setOnClickListener(view -> dialog.dismiss());
 
         dialog.show();
     }

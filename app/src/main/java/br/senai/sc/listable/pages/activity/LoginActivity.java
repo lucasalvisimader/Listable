@@ -40,11 +40,9 @@ public class LoginActivity extends AppCompatActivity {
 
         String html = "<font color=#1C1C1C>Não possui conta? </font><font color=#FD9226>Registre-se</font>";
         loginToRegister.setText(Html.fromHtml(html));
-        onClick(loginToRegister);
 
         login();
         onClick(loginToRegister, RegisterActivity.class);
-        onClick(loginSubmit, MainActivity.class);
 
         loginEmail.setOnFocusChangeListener((v, hasFocus) -> {
             if (!hasFocus) {
@@ -59,9 +57,9 @@ public class LoginActivity extends AppCompatActivity {
         });
     }
 
-    private void onClick(TextView from) {
+    private void onClick(TextView from, Object to) {
         from.setOnClickListener(v -> {
-            Intent i = new Intent(this, RegisterActivity.class);
+            Intent i = new Intent(this, (Class<?>) to);
             startActivity(i);
         });
     }
@@ -111,6 +109,7 @@ public class LoginActivity extends AppCompatActivity {
 
     private void showToast(String message) {
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
+    }
 
     private void hideKeyboard(View view) {
         InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
