@@ -9,12 +9,10 @@ import br.senai.sc.listable.entity.Item;
 import br.senai.sc.listable.entity.ShoppingList;
 
 public class SaveListFirebase {
-    public static void save(String name) {
-        DatabaseReference reference = FirebaseDatabase.getInstance().getReference();
-        DatabaseReference lists = reference.child("lists");
+    public static void save(ShoppingList list) {
+        DatabaseReference lists = ConfigurationFirebase.getFirebase().child("lists");
         String id = GeneratorUUID.generate();
-
-        ShoppingList list = new ShoppingList(id, name);
+        list.setId(id);
 
         lists.child(id).setValue(list);
     }

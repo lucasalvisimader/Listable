@@ -14,12 +14,12 @@ public class ShoppingList implements Serializable {
     private boolean done;
     private List<Item> items = new ArrayList<>();
     private Integer itemsDone;
+    private String idUser;
 
-    public ShoppingList(String id, String name) {
+    public ShoppingList(String id, String name, String idUser) {
         this.id = id;
         this.name = name;
-        this.total = 0;
-        this.itemsDone = 0;
+        this.idUser = idUser;
     }
 
     public ShoppingList() {
@@ -77,6 +77,14 @@ public class ShoppingList implements Serializable {
 
     public void removeItem(Item item) {
         items.remove(item);
+    }
+
+    public String getIdUser() {
+        return idUser;
+    }
+
+    public void setIdUser(String idUser) {
+        this.idUser = idUser;
     }
 
     public Integer getItemsDone() {
