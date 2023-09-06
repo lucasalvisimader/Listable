@@ -1,7 +1,10 @@
 package br.senai.sc.listable.pages.activity;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.text.Html;
+import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -38,6 +41,30 @@ public class RegisterActivity extends AppCompatActivity {
         String html = "<font color=#1C1C1C>Já possui conta? </font><font color=#FD9226>Ir para login</font>";
         registerToLogin.setText(Html.fromHtml(html));
         registerToLogin.setOnClickListener(v -> finish());
+
+        registerNickname.setOnFocusChangeListener((v, hasFocus) -> {
+            if (!hasFocus) {
+                hideKeyboard(v);
+            }
+        });
+
+        registerEmail.setOnFocusChangeListener((v, hasFocus) -> {
+            if (!hasFocus) {
+                hideKeyboard(v);
+            }
+        });
+
+        registerPassword.setOnFocusChangeListener((v, hasFocus) -> {
+            if (!hasFocus) {
+                hideKeyboard(v);
+            }
+        });
+
+        registerConfirmPassword.setOnFocusChangeListener((v, hasFocus) -> {
+            if (!hasFocus) {
+                hideKeyboard(v);
+            }
+        });
 
         register();
     }
@@ -90,5 +117,10 @@ public class RegisterActivity extends AppCompatActivity {
 
     private void showToast(String message) {
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
+    }
+
+    private void hideKeyboard(View view) {
+        InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+        imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
     }
 }

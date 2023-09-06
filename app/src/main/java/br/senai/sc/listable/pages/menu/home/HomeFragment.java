@@ -19,6 +19,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -152,11 +153,15 @@ public class HomeFragment extends Fragment {
             @Override
             public void onUserLoaded(String idUser) {
                 confirmButton.setOnClickListener(view -> {
-                    ShoppingList list = new ShoppingList();
-                    list.setName(input.getText().toString());
-                    list.setIdUser(idUser);
-                    SaveListFirebase.save(list);
-                    dialog.dismiss();
+                    if (!(input.getText().toString().equals(""))) {
+                        ShoppingList list = new ShoppingList();
+                        list.setName(input.getText().toString());
+                        list.setIdUser(idUser);
+                        SaveListFirebase.save(list);
+                        dialog.dismiss();
+                    } else {
+                        showToast(binding.getRoot(), "Nome de lista inválido");
+                    }
                 });
             }
 
@@ -175,5 +180,9 @@ public class HomeFragment extends Fragment {
     public void onDestroyView() {
         super.onDestroyView();
         binding = null;
+    }
+
+    private void showToast(View view, String message) {
+        Toast.makeText(view.getContext(), message, Toast.LENGTH_SHORT).show();
     }
 }

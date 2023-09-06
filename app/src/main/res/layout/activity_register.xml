@@ -5,7 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".pages.activity.RegisterActivity"
-    android:background="@color/bg">
+    android:background="@color/bg"
+    android:focusableInTouchMode="true"
+    android:clickable="true"
+    android:focusable="true">
 
     <ImageView
         android:id="@+id/logo"
@@ -28,6 +31,8 @@
         android:layout_marginEnd="43dp"
         android:autofillHints=""
         android:ems="10"
+        android:clickable="true"
+        android:focusable="true"
         android:fontFamily="@font/inter_semi_bold"
         android:hint="@string/apelido"
         android:inputType="text"
@@ -45,6 +50,8 @@
         android:layout_marginEnd="43dp"
         android:autofillHints=""
         android:ems="10"
+        android:clickable="true"
+        android:focusable="true"
         android:fontFamily="@font/inter_semi_bold"
         android:hint="@string/email"
         android:inputType="textEmailAddress"
@@ -62,6 +69,8 @@
         android:layout_marginEnd="43dp"
         android:autofillHints=""
         android:ems="10"
+        android:clickable="true"
+        android:focusable="true"
         android:fontFamily="@font/inter_semi_bold"
         android:hint="@string/senha"
         android:inputType="textPassword"
@@ -79,6 +88,8 @@
         android:layout_marginEnd="43dp"
         android:autofillHints=""
         android:ems="10"
+        android:clickable="true"
+        android:focusable="true"
         android:fontFamily="@font/inter"
         android:hint="@string/confirmar_senha"
         android:inputType="textPassword"
