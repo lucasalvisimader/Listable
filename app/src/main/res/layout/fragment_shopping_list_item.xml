@@ -9,7 +9,9 @@
     android:layout_marginVertical="10dp"
     android:layout_marginHorizontal="20dp"
     android:background="@drawable/rounded_corners_grey"
-    android:elevation="5dp">
+    android:elevation="5dp"
+    android:clickable="true"
+    android:focusable="true">
 
     <TextView
         android:id="@+id/shopping_list_item_name"

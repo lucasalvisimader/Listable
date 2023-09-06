@@ -75,10 +75,10 @@ public class ItemsActivity extends AppCompatActivity {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot snapshot) {
                     itemList.clear();
-                    for (DataSnapshot item : snapshot.getChildren()) {
-                        Item item2 = item.getValue(Item.class);
-                        if (item2 != null) {
-                            itemList.add(item2);
+                    for (DataSnapshot snapshotChild : snapshot.getChildren()) {
+                        Item item = snapshotChild.getValue(Item.class);
+                        if (item != null) {
+                            itemList.add(item);
                         }
                     }
                     AdapterShoppingListItems adapaterItem = new AdapterShoppingListItems(ItemsActivity.this, itemList, shoppingList);

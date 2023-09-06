@@ -4,17 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".pages.fragment.EditItem">
+    tools:context=".pages.fragment.EditItemFragment">
 
     <androidx.cardview.widget.CardView
         android:layout_width="357dp"
-        android:layout_height="254dp"
+        android:layout_height="330dp"
         android:layout_gravity="bottom|center"
         app:cardBackgroundColor="@color/transparent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="357dp"
-            android:layout_height="254dp"
+            android:layout_height="331dp"
             android:layout_gravity="bottom|center"
             android:background="@drawable/rounded_bottom_corners_grey">
 
@@ -23,7 +23,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="33dp"
                 android:layout_marginEnd="16dp"
                 android:src="@drawable/left_arrow"
                 app:layout_constraintEnd_toStartOf="@+id/edit_item_input_name"
@@ -33,12 +33,13 @@
             <EditText
                 android:id="@+id/edit_item_input_name"
                 style="@style/items_input_name"
-                android:elevation="10dp"
                 android:layout_width="284dp"
                 android:layout_height="48dp"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="25dp"
                 android:layout_marginEnd="12dp"
+                android:elevation="10dp"
                 android:ems="10"
+                android:fontFamily="@font/inter"
                 android:inputType="textPersonName"
                 android:text="Item"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -58,31 +59,33 @@
             <EditText
                 android:id="@+id/edit_item_input_quantity"
                 style="@style/items_general_inputs"
-                android:elevation="10dp"
                 android:layout_width="100dp"
                 android:layout_height="48dp"
                 android:layout_marginStart="10dp"
-                android:layout_marginTop="30dp"
+                android:elevation="10dp"
                 android:ems="10"
+                android:fontFamily="@font/inter"
+                android:hint="Qtd"
                 android:inputType="textPersonName"
                 android:text=""
                 android:textSize="16sp"
-                android:hint="Quantidade"
+                app:layout_constraintBottom_toTopOf="@+id/edit_item_input_obs"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/edit_item_input_name" />
 
             <EditText
                 android:id="@+id/edit_item_input_un"
                 style="@style/items_general_inputs"
-                android:elevation="10dp"
-                android:textSize="16sp"
                 android:layout_width="100dp"
                 android:layout_height="48dp"
-                android:layout_marginTop="30dp"
+                android:elevation="10dp"
                 android:ems="10"
+                android:fontFamily="@font/inter"
+                android:hint="Unidade"
                 android:inputType="number"
                 android:text=""
-                android:hint="Unidade"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toTopOf="@+id/edit_item_input_obs"
                 app:layout_constraintEnd_toStartOf="@+id/edit_item_input_price"
                 app:layout_constraintStart_toEndOf="@+id/edit_item_input_quantity"
                 app:layout_constraintTop_toBottomOf="@+id/edit_item_input_name" />
@@ -90,47 +93,49 @@
             <EditText
                 android:id="@+id/edit_item_input_price"
                 style="@style/items_general_inputs"
-                android:elevation="10dp"
-                android:textSize="16sp"
                 android:layout_width="100dp"
                 android:layout_height="48dp"
-                android:layout_marginTop="30dp"
                 android:layout_marginEnd="10dp"
+                android:elevation="10dp"
                 android:ems="10"
+                android:fontFamily="@font/inter"
+                android:hint="Preço"
                 android:inputType="textPersonName"
                 android:text=""
-                android:hint="Preço"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toTopOf="@+id/edit_item_input_obs"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/edit_item_input_name" />
 
             <EditText
                 android:id="@+id/edit_item_input_obs"
                 style="@style/items_obs"
-                android:elevation="10dp"
                 android:layout_width="337dp"
                 android:layout_height="48dp"
                 android:layout_marginStart="10dp"
+                android:layout_marginTop="50dp"
                 android:layout_marginEnd="10dp"
-                android:layout_marginBottom="40dp"
-                android:paddingLeft="40dp"
+                android:elevation="10dp"
                 android:ems="10"
+                android:fontFamily="@font/inter"
                 android:hint="Observação"
                 android:inputType="textPersonName"
+                android:paddingLeft="40dp"
                 android:text=""
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/edit_item_input_un" />
+                app:layout_constraintTop_toBottomOf="@+id/edit_item_input_name" />
 
             <TextView
                 android:id="@+id/edit_item_text_remove"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
-                android:text="Excluir"
-                android:textSize="18sp"
                 android:fontFamily="@font/inter"
+                android:text="Excluir"
                 android:textColor="@color/red_text_aside_green"
+                android:textSize="18sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/edit_item_trash_icon"
                 app:layout_constraintTop_toBottomOf="@+id/edit_item_input_obs" />
@@ -140,10 +145,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="52dp"
-                android:text="Aplicar"
-                android:textSize="18sp"
                 android:fontFamily="@font/inter"
+                android:text="Aplicar"
                 android:textColor="@color/green_text_aside_red"
+                android:textSize="18sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/edit_item_input_obs" />
@@ -160,10 +165,10 @@
 
             <ImageView
                 android:id="@+id/pencil_icon"
-                android:elevation="10dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
+                android:elevation="10dp"
                 android:src="@drawable/pencil_icon"
                 app:layout_constraintBottom_toBottomOf="@+id/edit_item_input_obs"
                 app:layout_constraintStart_toStartOf="@+id/edit_item_input_obs"

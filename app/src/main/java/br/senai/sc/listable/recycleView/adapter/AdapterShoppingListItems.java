@@ -1,12 +1,20 @@
 package br.senai.sc.listable.recycleView.adapter;
 
+import android.app.Dialog;
 import android.content.Context;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
@@ -15,6 +23,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
 import br.senai.sc.listable.R;
 import br.senai.sc.listable.entity.Item;
 import br.senai.sc.listable.entity.ShoppingList;
+import br.senai.sc.listable.pages.fragment.EditItemFragment;
 import br.senai.sc.listable.recycleView.viewHolder.ShoppingListItemsViewHolder;
 import br.senai.sc.listable.utils.SaveListFirebase;
 
@@ -47,9 +56,14 @@ public class AdapterShoppingListItems extends RecyclerView.Adapter<ShoppingListI
         itemList.get(position).setName(name);
         itemList.get(position).setFinished(isFinished.get());
 
+        holder.itemView.setOnClickListener(v -> {
+            showEditItemFragment(itemList.get(position), context);
+        });
+
         holder.getName().setText(name);
         holder.getCheckBox().setChecked(isFinished.get());
     }
+
 
     @Override
     public int getItemCount() {
@@ -59,5 +73,13 @@ public class AdapterShoppingListItems extends RecyclerView.Adapter<ShoppingListI
     private boolean onClickCheckboxIsFinished(List<Item> itemList, int position, ShoppingList shoppingList) {
         SaveListFirebase.editCheckbox(shoppingList, position);
         return !itemList.get(position).isFinished();
+    }
+
+    private void showEditItemFragment(Item item, Context context) {
+        Dialog dialog = new Dialog(context);
+        dialog.setContentView(R.layout.fragment_edit_item);
+        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        dialog.getWindow().setGravity(Gravity.);
+        dialog.show();
     }
 }
