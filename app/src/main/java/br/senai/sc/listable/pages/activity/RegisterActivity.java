@@ -64,6 +64,11 @@ public class RegisterActivity extends AppCompatActivity {
                 return;
             }
 
+            if (textPassword.length() < 8) {
+                showToast("A senha não possui tamanho mínimo de 8 caracteres");
+                return;
+            }
+
             if (!textPassword.equals(textConfirmPassword)) {
                 showToast("As senhas não coincidem");
                 return;
