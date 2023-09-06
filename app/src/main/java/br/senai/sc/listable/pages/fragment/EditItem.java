@@ -18,7 +18,7 @@ public class EditItem extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_edit_item, container, false);
 
-        EditText quantity = view.findViewById(R.id.edit_item_quantity_input);
+        EditText quantity = view.findViewById(R.id.edit_item_input_un);
         int numQuantity = Integer.parseInt(quantity.getText().toString());
         if (!(numQuantity >= 0)) {
             quantity.setText(numQuantity + 1);

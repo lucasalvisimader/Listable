@@ -28,7 +28,7 @@
 
     <EditText
         android:id="@+id/add_items_search_input"
-        style="@style/items_input"
+        style="@style/items_input_name"
         android:layout_width="250dp"
         android:layout_height="40dp"
         android:autofillHints=""
