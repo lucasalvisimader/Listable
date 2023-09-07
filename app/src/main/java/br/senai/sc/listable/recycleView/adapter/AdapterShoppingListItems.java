@@ -2,9 +2,11 @@ package br.senai.sc.listable.recycleView.adapter;
 
 import android.app.Dialog;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.icu.text.ListFormatter;
+import android.os.Bundle;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -58,9 +60,7 @@ public class AdapterShoppingListItems extends RecyclerView.Adapter<ShoppingListI
         itemList.get(position).setName(name);
         itemList.get(position).setFinished(isFinished.get());
 
-        holder.itemView.setOnClickListener(v -> {
-            showEditItemFragment(itemList.get(position), context);
-        });
+        holder.itemView.setOnClickListener(v -> showEditItemFragment(itemList.get(position), context));
 
         holder.getName().setText(name);
         holder.getCheckBox().setChecked(isFinished.get());
@@ -78,11 +78,13 @@ public class AdapterShoppingListItems extends RecyclerView.Adapter<ShoppingListI
     }
 
     private void showEditItemFragment(Item item, Context context) {
-        Dialog dialog = new Dialog(context);
-        dialog.setContentView(R.layout.fragment_edit_item);
-        dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-        dialog.getWindow().setGravity(Gravity.BOTTOM);
-        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-        dialog.show();
+        EditItemFragment editItemFragment = new EditItemFragment();
+
+        Bundle bundle = new Bundle();
+        bundle.putSerializable("item", item);
+        editItemFragment.setArguments(bundle);
+
+        editItemFragment.show(((AppCompatActivity) context).getSupportFragmentManager(), "EditItemDialog");
     }
+
 }
